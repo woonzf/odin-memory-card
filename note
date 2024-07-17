@@ -1,0 +1,12 @@
+Name: Pokemon Memory Card Game
+
+Background Image: https://wallpapercave.com/w/wp8695692
+API: https://pokeapi.co/
+
+Features:
+- background music
+- start screen
+- difficulty: 3, 6, 9
+- loading screen
+- score / high score
+- pokemon cry when click

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply h-screen w-screen flex justify-center font-luckiest-guy;
+    background: url("background.jpg");
+    background-position: center;
+  }
+}
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
