@@ -11,6 +11,11 @@
   }
 }
 
+[class^="animate"] {
+  will-change: animation;
+  animation-fill-mode: forwards;
+}
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;

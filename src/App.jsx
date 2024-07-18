@@ -4,8 +4,9 @@ import * as music from "./assets/components/music";
 import "./App.css";
 
 function App() {
+  const [play, setPlay] = useState(0);
   const [start, setStart] = useState(0);
-  const [playMusic, setPlayMusic] = useState(0);
+  const [playMusic, setPlayMusic] = useState(1);
 
   function handleStartChange() {
     setStart(+!start);
@@ -13,12 +14,24 @@ function App() {
 
   function handlePlayMusicChange() {
     setPlayMusic(+!playMusic);
-    music.playMusic(0);
+    music.playBGM();
   }
 
   return (
     <>
-      {start === 0 && (
+      {play === 0 && (
+        <div className="h-full w-full relative" id="click-anywhere">
+          <button
+            className="text-white text-2xl lg:text-5xl absolute top-[82%] left-1/2 -translate-x-1/2"
+            onClick={() => {
+              setPlay(1);
+            }}
+          >
+            <div className="animate-bounce">Play</div>
+          </button>
+        </div>
+      )}
+      {play === 1 && start === 0 && (
         <StartScreen
           onStartClick={handleStartChange}
           playMusic={playMusic}
