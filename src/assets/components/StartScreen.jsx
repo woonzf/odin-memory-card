@@ -6,14 +6,14 @@ function StartScreen({ onStartClick, playMusic, onPlayMusicClick }) {
       <div className="absolute top-5 left-5">
         <ToggleMusic playMusic={playMusic} onClick={onPlayMusicClick} />
       </div>
-      <div className="h-[43%] flex flex-col justify-end items-center gap-[1vh]">
+      <div className="h-[43%] flex flex-col justify-end items-center gap-[1vh] select-none">
         <img
           className="w-[75%] lg:w-full"
           src="./src/assets/img/pokemon-logo.png"
           alt="Pokémon"
         />
         <div
-          className="text-3xl lg:text-5xl text-yellow-300"
+          className="text-3xl lg:text-5xl text-[#ffcb05]"
           id="logo-memory-card"
         >
           Mémory Card

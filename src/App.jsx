@@ -1,5 +1,6 @@
 import { useState } from "react";
 import StartScreen from "./assets/components/StartScreen";
+import * as music from "./assets/components/music";
 import "./App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
   function handlePlayMusicChange() {
     setPlayMusic(+!playMusic);
+    music.playMusic(0);
   }
 
   return (

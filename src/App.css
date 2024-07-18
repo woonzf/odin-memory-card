@@ -8,6 +8,7 @@
   }
 
   #logo-memory-card {
-    -webkit-text-stroke: 3px #3b82f6;
+    text-shadow: -3px 3px 1px #2a74ba;
+    -webkit-text-stroke: 3px #2a74ba;
   }
 }
