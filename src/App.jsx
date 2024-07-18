@@ -4,8 +4,27 @@ import "./App.css";
 
 function App() {
   const [start, setStart] = useState(0);
+  const [playMusic, setPlayMusic] = useState(0);
 
-  return <>{start === 0 && <StartScreen onClick={() => setStart(1)} />}</>;
+  function handleStartChange() {
+    setStart(+!start);
+  }
+
+  function handlePlayMusicChange() {
+    setPlayMusic(+!playMusic);
+  }
+
+  return (
+    <>
+      {start === 0 && (
+        <StartScreen
+          onStartClick={handleStartChange}
+          playMusic={playMusic}
+          onPlayMusicClick={handlePlayMusicChange}
+        />
+      )}
+    </>
+  );
 }
 
 export default App;
