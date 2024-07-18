@@ -6,4 +6,8 @@
   #root {
     @apply w-full max-w-screen-xl;
   }
+
+  #logo-memory-card {
+    -webkit-text-stroke: 3px #3b82f6;
+  }
 }

@@ -6,6 +6,7 @@
   body {
     @apply h-screen w-screen flex justify-center font-luckiest-guy;
     background: url("background.jpg");
+    background-size: cover;
     background-position: center;
   }
 }
