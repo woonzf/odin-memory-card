@@ -21,7 +21,7 @@ function App() {
         >
           <div className="h-full w-full max-w-screen-xl flex flex-col">
             <div className="h-[43%] flex justify-center items-end">
-              <div className="h-[50%] flex items-center">
+              <div className="h-[50%] px-4 flex items-center">
                 A memory card game inspired by Pokémon...
               </div>
             </div>
@@ -33,8 +33,12 @@ function App() {
         </button>
       )}
       {play === 1 && (
-        <div className="h-full w-full max-w-screen-xl flex flex-col">
-          {start === 0 && <StartScreen onDifficultyClick={handleStartChange} />}
+        <>
+          <div className="h-full w-full max-w-screen-xl flex flex-col">
+            {start === 0 && (
+              <StartScreen onDifficultyClick={handleStartChange} />
+            )}
+          </div>
           <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center">
             <a
               className="underline"
@@ -46,7 +50,7 @@ function App() {
             </a>
             &nbsp;&copy; 2024
           </footer>
-        </div>
+        </>
       )}
     </>
   );
