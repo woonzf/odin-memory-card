@@ -6,6 +6,7 @@ const musicStart = new Howl({
   src: [opening],
   autoplay: true,
   loop: true,
+  rate: 1,
 });
 
 let isPlaying = 1;

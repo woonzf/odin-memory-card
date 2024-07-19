@@ -20,16 +20,16 @@ function App() {
   return (
     <>
       {play === 0 && (
-        <div
+        <button
           className="h-full w-full relative"
           onClick={() => {
             setPlay(1);
           }}
         >
-          <div className="text-white text-2xl lg:text-5xl absolute top-[82%] left-1/2 -translate-x-1/2">
+          <div className="text-white text-2xl lg:text-5xl flex justify-center absolute top-[82%] left-1/2 -translate-x-1/2">
             <div className="animate-bounce">Press Anywhere</div>
           </div>
-        </div>
+        </button>
       )}
       {play === 1 && (
         <div className="h-full w-full max-w-screen-xl">
