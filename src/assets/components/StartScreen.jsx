@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ToggleMusic from "./ToggleMusic";
 
 function StartScreen({ onStartClick, playMusic, onPlayMusicClick }) {
   const [presents, setPresents] = useState(0);
 
-  // Fix this
-  useEffect(() => {
+  if (presents === 0) {
     setTimeout(() => {
       setPresents(1);
     }, 11000);
-  }, [presents]);
+  }
 
   return (
     <div className="h-full flex flex-col items-center text-white relative">
