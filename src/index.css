@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply h-screen w-screen flex justify-center font-luckiest-guy;
+    @apply h-screen w-screen font-luckiest-guy;
     background: url("./assets/img/background.jpg");
     background-size: cover;
     background-position: center;

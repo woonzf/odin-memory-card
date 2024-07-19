@@ -4,7 +4,7 @@
 
 @layer utilities {
   #root {
-    @apply w-full max-w-screen-xl;
+    @apply h-full w-full flex justify-center;
   }
 
   #logo-memory-card {

@@ -4,6 +4,7 @@ import ToggleMusic from "./ToggleMusic";
 function StartScreen({ onStartClick, playMusic, onPlayMusicClick }) {
   const [presents, setPresents] = useState(0);
 
+  // Fix this
   useEffect(() => {
     setTimeout(() => {
       setPresents(1);

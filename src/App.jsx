@@ -20,23 +20,27 @@ function App() {
   return (
     <>
       {play === 0 && (
-        <div className="h-full w-full relative" id="click-anywhere">
-          <button
-            className="text-white text-2xl lg:text-5xl absolute top-[82%] left-1/2 -translate-x-1/2"
-            onClick={() => {
-              setPlay(1);
-            }}
-          >
-            <div className="animate-bounce">Play</div>
-          </button>
+        <div
+          className="h-full w-full relative"
+          onClick={() => {
+            setPlay(1);
+          }}
+        >
+          <div className="text-white text-2xl lg:text-5xl absolute top-[82%] left-1/2 -translate-x-1/2">
+            <div className="animate-bounce">Press Anywhere</div>
+          </div>
         </div>
       )}
-      {play === 1 && start === 0 && (
-        <StartScreen
-          onStartClick={handleStartChange}
-          playMusic={playMusic}
-          onPlayMusicClick={handlePlayMusicChange}
-        />
+      {play === 1 && (
+        <div className="h-full w-full max-w-screen-xl">
+          {start === 0 && (
+            <StartScreen
+              onStartClick={handleStartChange}
+              playMusic={playMusic}
+              onPlayMusicClick={handlePlayMusicChange}
+            />
+          )}
+        </div>
       )}
     </>
   );
