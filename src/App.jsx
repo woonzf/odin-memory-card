@@ -1,5 +1,6 @@
 import { useState } from "react";
 import StartScreen from "./assets/components/StartScreen";
+import GameScreen from "./assets/components/GameScreen";
 import "./App.css";
 
 function App() {
@@ -35,8 +36,10 @@ function App() {
       {play === 1 && (
         <>
           <div className="h-full w-full max-w-screen-xl flex flex-col">
-            {start === 0 && (
+            {start === 0 ? (
               <StartScreen onDifficultyClick={handleStartChange} />
+            ) : (
+              <GameScreen />
             )}
           </div>
           <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center">

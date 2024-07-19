@@ -11,11 +11,13 @@ function ToggleMusic() {
 
   return (
     <button onClick={handlePlayMusicChange}>
-      {playMusic === 1 ? (
-        <img src="./src/assets/icons/music.png" alt="Music: On" />
-      ) : (
-        <img src="./src/assets/icons/music-off.png" alt="Music: Off" />
-      )}
+      <div className="hover-scale">
+        {playMusic === 1 ? (
+          <img src="./src/assets/icons/music.png" alt="Music: On" />
+        ) : (
+          <img src="./src/assets/icons/music-off.png" alt="Music: Off" />
+        )}
+      </div>
     </button>
   );
 }

@@ -1,24 +1,29 @@
+const difficultyList = [
+  { name: "Wild Pokemon", card: 3 },
+  { name: "Trainer", card: 6 },
+  { name: "Gym Leader", card: 9 },
+  { name: "Rival", card: 12 },
+];
+
 let difficulty = null;
+let highScore = 0;
+
+export function getDifficultyName() {
+  return difficulty.name;
+}
 
 export function setDifficulty(index) {
-  difficulty = index;
+  difficulty = difficultyList[index];
 }
 
-export function getDifficulty() {
-  let name = "";
-  switch (+difficulty) {
-    case 0:
-      name = "Wild Pokemon";
-      break;
-    case 1:
-      name = "Trainer";
-      break;
-    case 2:
-      name = "Gym Leader";
-      break;
-    case 3:
-      name = "Rival";
-      break;
-  }
-  return name;
+export function getHighScore() {
+  return highScore;
 }
+
+export function setHighScore(score) {
+  highScore = score;
+  localStorage.setItem("pokemonMemoryCard", highScore);
+}
+
+if (localStorage.pokemonMemoryCard)
+  highScore = JSON.parse(localStorage.getItem("pokemonMemoryCard"));

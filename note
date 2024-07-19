@@ -10,10 +10,7 @@ Howler: https://howlerjs.com/
 Features:
 - background music
 - start screen
-- difficulty: 3, 6, 9
+- difficulty: 3, 6, 9, 12
 - loading screen
 - score / high score
 - pokemon cry when click
-
-Fix:
-- welcome screen to be full screen and click anywhere to play
