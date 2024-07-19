@@ -30,4 +30,8 @@ export function playBGM() {
   }
 }
 
+export function getIsPlaying() {
+  return isPlaying;
+}
+
 setBGM(0);

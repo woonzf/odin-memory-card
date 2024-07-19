@@ -1,27 +1,13 @@
 import { useState } from "react";
 import StartScreen from "./assets/components/StartScreen";
-import * as music from "./assets/components/music";
 import "./App.css";
-
-let difficulty = null;
-
-function setDifficulty(index) {
-  difficulty = index;
-}
 
 function App() {
   const [play, setPlay] = useState(0);
   const [start, setStart] = useState(0);
-  const [playMusic, setPlayMusic] = useState(1);
 
-  function handleStartGame(index) {
-    setDifficulty(index);
+  function handleStartChange() {
     setStart(+!start);
-  }
-
-  function handlePlayMusicChange() {
-    setPlayMusic(+!playMusic);
-    music.playBGM();
   }
 
   return (
@@ -40,13 +26,7 @@ function App() {
       )}
       {play === 1 && (
         <div className="h-full w-full max-w-screen-xl">
-          {start === 0 && (
-            <StartScreen
-              playMusic={playMusic}
-              onPlayMusicClick={handlePlayMusicChange}
-              onDifficultyClick={handleStartGame}
-            />
-          )}
+          {start === 0 && <StartScreen onDifficultyClick={handleStartChange} />}
         </div>
       )}
     </>

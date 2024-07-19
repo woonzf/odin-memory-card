@@ -1,8 +1,9 @@
 import { useState } from "react";
 import ToggleMusic from "./ToggleMusic";
+import * as game from "./game";
 import "../styles/Screen.css";
 
-function StartScreen({ playMusic, onPlayMusicClick, onDifficultyClick }) {
+function StartScreen({ onDifficultyClick }) {
   const [presents, setPresents] = useState(0);
   const [start, setStart] = useState(0);
 
@@ -13,13 +14,14 @@ function StartScreen({ playMusic, onPlayMusicClick, onDifficultyClick }) {
   }
 
   function handleDifficultyClick(e) {
-    onDifficultyClick(e.target.id);
+    game.setDifficulty(e.target.id);
+    onDifficultyClick();
   }
 
   return (
     <div className="h-full flex flex-col items-center text-white relative">
       <div className="absolute top-5 left-5">
-        <ToggleMusic playMusic={playMusic} onClick={onPlayMusicClick} />
+        <ToggleMusic />
       </div>
       <div className="h-[43%] flex items-end">
         {presents === 0 && (
