@@ -14,19 +14,38 @@ function App() {
     <>
       {play === 0 && (
         <button
-          className="h-full w-full relative"
+          className="h-full w-full text-2xl lg:text-5xl text-white flex justify-center"
           onClick={() => {
             setPlay(1);
           }}
         >
-          <div className="text-white text-2xl lg:text-5xl flex justify-center absolute top-[82%] left-1/2 -translate-x-1/2">
-            <div className="animate-bounce">Press Anywhere</div>
+          <div className="h-full w-full max-w-screen-xl flex flex-col">
+            <div className="h-[43%] flex justify-center items-end">
+              <div className="h-[50%] flex items-center">
+                A memory card game inspired by Pokémon...
+              </div>
+            </div>
+            <div className="h-[31%] w-full mt-[26vh] flex flex-col justify-center">
+              <div>Press Anywhere</div>
+              <div>To Continue...</div>
+            </div>
           </div>
         </button>
       )}
       {play === 1 && (
-        <div className="h-full w-full max-w-screen-xl">
+        <div className="h-full w-full max-w-screen-xl flex flex-col">
           {start === 0 && <StartScreen onDifficultyClick={handleStartChange} />}
+          <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center">
+            <a
+              className="underline"
+              href="https://github.com/woonzf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              WZF
+            </a>
+            &nbsp;&copy; 2024
+          </footer>
         </div>
       )}
     </>

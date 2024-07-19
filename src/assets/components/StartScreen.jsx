@@ -21,7 +21,7 @@ function StartScreen({ onDifficultyClick }) {
     }
 
     return (
-      <div className="h-[31%] w-full mt-[26vh] flex items-center">
+      <div className="h-[31%] w-full mt-[calc(26vh+30px)] flex items-center">
         {start === 0 && (
           <div className="w-full flex justify-center">
             <div className="animate-start">
