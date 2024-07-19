@@ -5,7 +5,6 @@ import "../styles/Screen.css";
 
 function StartScreen({ onDifficultyClick }) {
   const [presents, setPresents] = useState(0);
-  const [start, setStart] = useState(0);
 
   if (presents === 0) {
     setTimeout(() => {
@@ -13,9 +12,67 @@ function StartScreen({ onDifficultyClick }) {
     }, 11000);
   }
 
-  function handleDifficultyClick(e) {
-    game.setDifficulty(e.target.id);
-    onDifficultyClick();
+  function StartSection({ onDifficultyClick }) {
+    const [start, setStart] = useState(0);
+
+    function handleDifficultyClick(e) {
+      game.setDifficulty(e.target.id);
+      onDifficultyClick();
+    }
+
+    return (
+      <div className="h-[31%] w-full mt-[26vh] flex items-center">
+        {start === 0 && (
+          <div className="w-full flex justify-center">
+            <div className="animate-start">
+              <button
+                className="text-3xl lg:text-5xl hover-scale"
+                onClick={() => {
+                  setStart(1);
+                }}
+              >
+                <div className="animate-bounce">Start</div>
+              </button>
+            </div>
+          </div>
+        )}
+        {start === 1 && (
+          <div className="h-full w-full p-4 text-3xl lg:text-5xl flex flex-col justify-evenly items-center">
+            <div>- Select Difficulty -</div>
+            <div className="grid grid-cols-2 gap-4">
+              <button
+                className="btn-difficulty hover-scale"
+                onClick={handleDifficultyClick}
+                id={0}
+              >
+                Wild Pokemon
+              </button>
+              <button
+                className="btn-difficulty hover-scale"
+                onClick={handleDifficultyClick}
+                id={1}
+              >
+                Trainer
+              </button>
+              <button
+                className="btn-difficulty hover-scale"
+                onClick={handleDifficultyClick}
+                id={2}
+              >
+                Gym Leader
+              </button>
+              <button
+                className="btn-difficulty hover-scale"
+                onClick={handleDifficultyClick}
+                id={3}
+              >
+                Rival
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    );
   }
 
   return (
@@ -48,59 +105,7 @@ function StartScreen({ onDifficultyClick }) {
           </div>
         )}
       </div>
-      {presents === 1 && (
-        <div className="h-[31%] w-full mt-[26vh] flex items-center">
-          {start === 0 && (
-            <div className="w-full flex justify-center">
-              <div className="animate-start">
-                <button
-                  className="text-3xl lg:text-5xl hover-scale"
-                  onClick={() => {
-                    setStart(1);
-                  }}
-                >
-                  <div className="animate-bounce">Start</div>
-                </button>
-              </div>
-            </div>
-          )}
-          {start === 1 && (
-            <div className="h-full w-full p-4 text-3xl lg:text-5xl flex flex-col justify-evenly items-center">
-              <div>- Select Difficulty -</div>
-              <div className="grid grid-cols-2 gap-4">
-                <button
-                  className="btn-difficulty hover-scale"
-                  onClick={handleDifficultyClick}
-                  id={0}
-                >
-                  Wild Pokemon
-                </button>
-                <button
-                  className="btn-difficulty hover-scale"
-                  onClick={handleDifficultyClick}
-                  id={1}
-                >
-                  Trainer
-                </button>
-                <button
-                  className="btn-difficulty hover-scale"
-                  onClick={handleDifficultyClick}
-                  id={2}
-                >
-                  Gym Leader
-                </button>
-                <button
-                  className="btn-difficulty hover-scale"
-                  onClick={handleDifficultyClick}
-                  id={3}
-                >
-                  Rival
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+      {presents === 1 && <StartSection onDifficultyClick={onDifficultyClick} />}
     </div>
   );
 }
