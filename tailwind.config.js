@@ -11,7 +11,7 @@ export default {
       },
       animation: {
         'logo': 'slide-up 2s 1',
-        'presents': 'fade-in-out 11s 1',
+        'presents': 'fade-in-out 10s 1',
         'start': 'fade-in 3s 1',
       },
       keyframes: {

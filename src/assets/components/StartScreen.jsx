@@ -10,7 +10,7 @@ function StartScreen({ onDifficultyClick }) {
   if (presents === 0) {
     setTimeout(() => {
       setPresents(1);
-    }, 11000);
+    }, 10000);
   }
 
   function StartSection({ onDifficultyClick }) {
