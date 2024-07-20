@@ -41,34 +41,18 @@ function StartScreen({ onDifficultyClick }) {
           <div className="h-full w-full p-4 text-3xl lg:text-5xl flex flex-col justify-evenly items-center">
             <div>- Select Difficulty -</div>
             <div className="grid grid-cols-2 gap-4">
-              <button
-                className="btn-difficulty hover-scale"
-                onClick={handleDifficultyClick}
-                id={0}
-              >
-                Wild Pokemon
-              </button>
-              <button
-                className="btn-difficulty hover-scale"
-                onClick={handleDifficultyClick}
-                id={1}
-              >
-                Trainer
-              </button>
-              <button
-                className="btn-difficulty hover-scale"
-                onClick={handleDifficultyClick}
-                id={2}
-              >
-                Gym Leader
-              </button>
-              <button
-                className="btn-difficulty hover-scale"
-                onClick={handleDifficultyClick}
-                id={3}
-              >
-                Rival
-              </button>
+              {game.getDifficultyList().map((item) => {
+                return (
+                  <button
+                    key={item.id}
+                    className="btn-difficulty hover-scale"
+                    onClick={handleDifficultyClick}
+                    id={item.id}
+                  >
+                    {item.name}
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
