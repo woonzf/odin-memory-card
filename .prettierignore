@@ -4,6 +4,11 @@ index.html
 # Ignore main
 src/main.jsx
 
+# Ignore icons, img and music
+src/assets/icons/
+src/assets/img/
+src/assets/music/
+
 # Ignore ESLint
 .eslintrc.cjs
 
