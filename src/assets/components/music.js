@@ -33,6 +33,8 @@ const bgmBattle3 = new Howl({
 let isPlaying = 1;
 let bgm = null;
 
+Howler.volume(0.5);
+
 export function setBGM(index) {
   if (bgm) bgm.stop();
   switch (index) {
