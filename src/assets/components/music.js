@@ -1,31 +1,66 @@
 import { Howl } from "howler";
-import opening from "../music/101-opening.mp3";
-import oakRearchLab from "../music/104-oak_research_lab.mp3";
+import opening from "../music/opening.mp3";
+import wildPokemonBattle from "../music/wild_pokemon_battle.mp3";
+import trainerBattle from "../music/trainer_battle.mp3";
+import gymLeaderBattle from "../music/gym_leader_battle.mp3";
+import rivalBattle from "../music/rival_battle.mp3";
 
-const musicStart = new Howl({
+const bgmStart = new Howl({
   src: [opening],
-  autoplay: true,
-  loop: true,
-  rate: 1,
+  loop: 1,
+});
+
+const bgmBattle0 = new Howl({
+  src: [wildPokemonBattle],
+  loop: 1,
+});
+
+const bgmBattle1 = new Howl({
+  src: [trainerBattle],
+  loop: 1,
+});
+
+const bgmBattle2 = new Howl({
+  src: [gymLeaderBattle],
+  loop: 1,
+});
+
+const bgmBattle3 = new Howl({
+  src: [rivalBattle],
+  loop: 1,
 });
 
 let isPlaying = 1;
-let music = null;
+let bgm = null;
 
 export function setBGM(index) {
+  if (bgm) bgm.stop();
   switch (index) {
     case 0:
-      music = musicStart;
+      bgm = bgmStart;
+      break;
+    case 1:
+      bgm = bgmBattle0;
+      break;
+    case 2:
+      bgm = bgmBattle1;
+      break;
+    case 3:
+      bgm = bgmBattle2;
+      break;
+    case 4:
+      bgm = bgmBattle3;
       break;
   }
+  bgm.play();
 }
 
 export function playBGM() {
   if (isPlaying) {
-    music.volume(0.0);
+    bgm.volume(0.0);
     isPlaying = 0;
   } else {
-    music.volume(1.0);
+    bgm.volume(1.0);
     isPlaying = 1;
   }
 }

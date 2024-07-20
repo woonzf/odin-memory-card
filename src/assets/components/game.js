@@ -1,3 +1,5 @@
+import * as music from "./music";
+
 const difficultyList = [
   { name: "Wild Pokemon", card: 3 },
   { name: "Trainer", card: 6 },
@@ -14,6 +16,7 @@ export function getDifficultyName() {
 
 export function setDifficulty(index) {
   difficulty = difficultyList[index];
+  music.setBGM(+index + 1);
 }
 
 export function getHighScore() {
@@ -26,4 +29,4 @@ export function setHighScore(score) {
 }
 
 if (localStorage.pokemonMemoryCard)
-  highScore = JSON.parse(localStorage.getItem("pokemonMemoryCard"));
+  highScore = localStorage.getItem("pokemonMemoryCard");
