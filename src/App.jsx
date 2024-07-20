@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { setBGM } from "./assets/components/music";
+import { startGame } from "./assets/components/game";
 import StartScreen from "./assets/components/StartScreen";
 import GameScreen from "./assets/components/GameScreen";
 import "./App.css";
@@ -7,7 +9,13 @@ function App() {
   const [play, setPlay] = useState(0);
   const [start, setStart] = useState(0);
 
-  function handleStartChange() {
+  function handlePlayChange() {
+    setBGM(0);
+    setPlay(1);
+  }
+
+  async function handleStartChange(e) {
+    await startGame(e.target.id);
     setStart(+!start);
   }
 
@@ -16,9 +24,7 @@ function App() {
       {play === 0 && (
         <button
           className="h-full w-full text-2xl lg:text-5xl text-white flex justify-center"
-          onClick={() => {
-            setPlay(1);
-          }}
+          onClick={handlePlayChange}
         >
           <div className="h-full w-full max-w-screen-xl flex flex-col">
             <div className="h-[43%] flex justify-center items-end">

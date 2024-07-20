@@ -72,5 +72,3 @@ export function getIsPlaying() {
 export function skipBGMStart() {
   bgmStart.seek(11);
 }
-
-setBGM(0);

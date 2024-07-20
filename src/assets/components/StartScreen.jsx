@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { startGame, getDifficultyList } from "./game";
+import { getDifficultyList } from "./game";
 import { skipBGMStart } from "./music";
 import ToggleMusic from "./ToggleMusic";
 import "../styles/Screen.css";
@@ -16,11 +16,6 @@ function StartScreen({ onDifficultyClick }) {
 
   function StartSection({ onDifficultyClick }) {
     const [start, setStart] = useState(0);
-
-    function handleDifficultyClick(e) {
-      startGame(e.target.id);
-      onDifficultyClick();
-    }
 
     return (
       <div className="h-[31%] w-full mt-[calc(26vh+30px)] flex items-center">
@@ -47,7 +42,7 @@ function StartScreen({ onDifficultyClick }) {
                   <button
                     key={item.id}
                     className="btn-difficulty hover-scale"
-                    onClick={handleDifficultyClick}
+                    onClick={onDifficultyClick}
                     id={item.id}
                   >
                     {item.name}

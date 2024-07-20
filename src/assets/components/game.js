@@ -1,4 +1,5 @@
 import { setBGM } from "./music";
+import { generatePokemonList } from "./pokedex";
 
 const difficultyList = [
   { id: 0, name: "Wild Pokémon", card: 3 },
@@ -9,15 +10,20 @@ const difficultyList = [
 
 let difficulty = null;
 let highScore = 0;
+let pokemonList = null;
 
 // Retrieve high score from localStorage if present
 if (localStorage.pokemonMemoryCard)
   highScore = localStorage.getItem("pokemonMemoryCard");
 
-export function startGame(index) {
+export async function startGame(index) {
   setDifficulty(index);
+  pokemonList = await generatePokemonList(difficulty.card);
   setBGM(+index + 1);
-  // generate Pokemons
+}
+
+export function getPokemonList() {
+  return pokemonList;
 }
 
 export function getDifficultyList() {
