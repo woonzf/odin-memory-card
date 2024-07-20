@@ -1,8 +1,19 @@
+import { useState } from "react";
+import "../styles/Card.css";
+
 function Card() {
+  const [isFlipped, setIsFlipped] = useState(0);
+
+  function handleIsFlippedChange() {
+    setIsFlipped(+!isFlipped);
+  }
+
   return (
-    // Pokemon card size = 63.5 x 88 mm
-    <button className="h-[14vh] lg:h-[20vh] xl:h-[25vh] aspect-[0.722] border-2 border-white rounded-md">
-      TEST
+    <button className="card" onClick={handleIsFlippedChange}>
+      <div className={"card-inner " + (isFlipped ? "flip" : "")}>
+        <div className="card-front">Front</div>
+        <div className="card-back">Back</div>
+      </div>
     </button>
   );
 }

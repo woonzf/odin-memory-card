@@ -1,4 +1,4 @@
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 import opening from "../music/opening.mp3";
 import wildPokemonBattle from "../music/wild_pokemon_battle.mp3";
 import trainerBattle from "../music/trainer_battle.mp3";
@@ -57,10 +57,10 @@ export function setBGM(index) {
 
 export function playBGM() {
   if (isPlaying) {
-    bgm.volume(0.0);
+    Howler.mute(true);
     isPlaying = 0;
   } else {
-    bgm.volume(1.0);
+    Howler.mute(false);
     isPlaying = 1;
   }
 }
