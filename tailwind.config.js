@@ -6,8 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'pokeblue': '#2a74ba',
+        'pokedarkblue': '#21386e',
+      },
       fontFamily: {
-        "luckiest-guy": ["Luckiest Guy"],
+        'luckiest-guy': ['Luckiest Guy'],
       },
       animation: {
         'logo': 'slide-up 2s 1',

@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { getHighScore, getDifficultyName, setHighScore } from "./game";
+import {
+  getHighScore,
+  getDifficultyName,
+  setHighScore,
+  getPokemonList,
+} from "./game";
 import ToggleMusic from "./ToggleMusic";
 import Card from "./Card";
 
@@ -8,6 +13,7 @@ function GameScreen() {
 
   const highScore = getHighScore();
   const difficulty = getDifficultyName();
+  const pokemonList = getPokemonList();
 
   function handleScoreChange() {
     let scoreNew = score + 1;
@@ -33,18 +39,9 @@ function GameScreen() {
         </div>
         <div className="flex">
           <div className="px-4 py-10 flex justify-center gap-5 flex-wrap">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {pokemonList.map((pokemon) => {
+              return <Card key={pokemon.name} pokemon={pokemon} />;
+            })}
           </div>
         </div>
       </main>

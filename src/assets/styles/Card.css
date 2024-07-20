@@ -17,17 +17,17 @@
 
   .card-front,
   .card-back {
-    @apply h-full w-full rounded-md absolute;
+    @apply h-full w-full bg-pokeblue bg-opacity-75 border-[0.5vh] border-pokedarkblue rounded-md absolute;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
   }
 
   .card-front {
-    @apply bg-white text-black;
+    @apply text-white;
   }
 
   .card-back {
-    @apply bg-black flip;
+    @apply flip;
   }
 
   .flip {

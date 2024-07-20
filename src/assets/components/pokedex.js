@@ -1,8 +1,5 @@
-let pokedexCount = 0;
-
-fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
-  .then((response) => response.json())
-  .then((json) => (pokedexCount = json.count - 1));
+// Gen 1 pokemon only
+let pokedexCount = 150;
 
 export async function generatePokemonList(card) {
   const url = "https://pokeapi.co/api/v2/pokemon/";
@@ -19,7 +16,7 @@ async function getPokemon(url, index) {
   return {
     name: json.name,
     sprite: json.sprites.front_default,
-    cry: json.cries.latest,
+    cry: json.cries.legacy,
   };
 }
 
@@ -30,7 +27,6 @@ function generateIndexList(card) {
     let randomInt = -1;
     while (list.includes(randomInt) || randomInt === -1)
       randomInt = getRandomInt(pokedexCount);
-    if (randomInt > 1025) randomInt += 8976;
     list.push(randomInt);
   }
 
