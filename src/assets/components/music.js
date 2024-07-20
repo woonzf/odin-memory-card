@@ -69,4 +69,8 @@ export function getIsPlaying() {
   return isPlaying;
 }
 
+export function skipBGMStart() {
+  bgmStart.seek(11);
+}
+
 setBGM(0);
