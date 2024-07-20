@@ -1,17 +1,17 @@
 import { useState } from "react";
+import { getHighScore, getDifficultyName, setHighScore } from "./game";
 import ToggleMusic from "./ToggleMusic";
 import Card from "./Card";
-import * as game from "./game";
 
 function GameScreen() {
   const [score, setScore] = useState(0);
 
-  const highScore = game.getHighScore();
-  const difficulty = game.getDifficultyName();
+  const highScore = getHighScore();
+  const difficulty = getDifficultyName();
 
   function handleScoreChange() {
     let scoreNew = score + 1;
-    if (scoreNew > highScore) game.setHighScore(scoreNew);
+    if (scoreNew > highScore) setHighScore(scoreNew);
     setScore(scoreNew);
   }
 
@@ -31,7 +31,7 @@ function GameScreen() {
           <div>- Difficulty -</div>
           <div>{difficulty}</div>
         </div>
-        <div className="h-full flex items-center">
+        <div className="flex">
           <div className="px-4 py-10 flex justify-center gap-5 flex-wrap">
             <Card />
             <Card />

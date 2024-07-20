@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { startGame, getDifficultyList } from "./game";
+import { skipBGMStart } from "./music";
 import ToggleMusic from "./ToggleMusic";
-import * as game from "./game";
-import * as music from "./music";
 import "../styles/Screen.css";
 
 function StartScreen({ onDifficultyClick }) {
   const [presents, setPresents] = useState(0);
+  const difficultyList = getDifficultyList();
 
   if (presents === 0) {
     setTimeout(() => {
@@ -17,7 +18,7 @@ function StartScreen({ onDifficultyClick }) {
     const [start, setStart] = useState(0);
 
     function handleDifficultyClick(e) {
-      game.setDifficulty(e.target.id);
+      startGame(e.target.id);
       onDifficultyClick();
     }
 
@@ -40,8 +41,8 @@ function StartScreen({ onDifficultyClick }) {
         {start === 1 && (
           <div className="h-full w-full p-4 text-3xl lg:text-5xl flex flex-col justify-evenly items-center">
             <div>- Select Difficulty -</div>
-            <div className="grid grid-cols-2 gap-4">
-              {game.getDifficultyList().map((item) => {
+            <div className="grid grid-cols-2 gap-[1vh]">
+              {difficultyList.map((item) => {
                 return (
                   <button
                     key={item.id}
@@ -70,7 +71,7 @@ function StartScreen({ onDifficultyClick }) {
           className="text-2xl lg:text-4xl hover-scale absolute top-5 right-5"
           onClick={() => {
             setPresents(1);
-            music.skipBGMStart();
+            skipBGMStart();
           }}
         >
           Skip
