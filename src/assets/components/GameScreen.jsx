@@ -2,27 +2,30 @@ import { useState } from "react";
 import {
   getHighScore,
   getDifficulty,
-  setHighScore,
   getPokemonList,
   checkMemory,
+  getScore,
+  shufflePokemonList,
 } from "./game";
+import { delay, flipCards } from "./flip";
 import Card from "./Card";
 
 function GameScreen() {
-  const [score, setScore] = useState(0);
+  const [pokemonList, setPokemonList] = useState(getPokemonList);
 
+  const score = getScore();
   const highScore = getHighScore();
   const difficulty = getDifficulty();
-  const pokemonList = getPokemonList();
 
-  function handleScoreChange() {
-    let scoreNew = score + 1;
-    if (scoreNew > highScore) setHighScore(scoreNew);
-    setScore(scoreNew);
-  }
-
-  function handleCheckMemory(id) {
-    if (checkMemory(id)) handleScoreChange();
+  async function handleResult(id) {
+    if (checkMemory(id)) {
+      flipCards();
+      await delay(600);
+      shufflePokemonList();
+      setPokemonList([...getPokemonList()]);
+      await delay(100);
+      flipCards();
+    }
   }
 
   return (
@@ -49,7 +52,7 @@ function GameScreen() {
                   key={pokemon.id}
                   pokemon={pokemon}
                   id={pokemon.id}
-                  onClick={handleCheckMemory}
+                  onClick={handleResult}
                 />
               );
             })}
