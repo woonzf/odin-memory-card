@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { getDifficultyList } from "./game";
 import { skipBGMStart } from "./music";
-import ToggleMusic from "./ToggleMusic";
 import "../styles/Screen.css";
 
 function StartScreen({ onDifficultyClick }) {
@@ -58,9 +57,6 @@ function StartScreen({ onDifficultyClick }) {
 
   return (
     <div className="h-full flex flex-col items-center text-white relative">
-      <div className="absolute top-5 left-5">
-        <ToggleMusic />
-      </div>
       {presents === 0 && (
         <button
           className="text-2xl lg:text-4xl hover-scale absolute top-5 right-5"

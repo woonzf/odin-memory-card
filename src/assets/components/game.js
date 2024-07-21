@@ -11,10 +11,38 @@ const difficultyList = [
 let difficulty = null;
 let highScore = 0;
 let pokemonList = null;
+let memory = [];
 
 // Retrieve high score from localStorage if present
 if (localStorage.pokemonMemoryCard)
   highScore = localStorage.getItem("pokemonMemoryCard");
+
+export function checkMemory(id) {
+  if (!memory.includes(id)) memory.push(id);
+  else return false;
+  pokemonList = shuffle(pokemonList);
+  return true;
+}
+
+function shuffle(array) {
+  // Fisher–Yates shuffle
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
 
 export async function startGame(index) {
   setDifficulty(index);
@@ -30,8 +58,8 @@ export function getDifficultyList() {
   return difficultyList;
 }
 
-export function getDifficultyName() {
-  return difficulty.name;
+export function getDifficulty() {
+  return difficulty;
 }
 
 function setDifficulty(index) {

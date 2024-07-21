@@ -3,6 +3,7 @@ import { setBGM } from "./assets/components/music";
 import { startGame } from "./assets/components/game";
 import StartScreen from "./assets/components/StartScreen";
 import GameScreen from "./assets/components/GameScreen";
+import ToggleMusic from "./assets/components/ToggleMusic";
 import "./App.css";
 
 function App() {
@@ -41,7 +42,10 @@ function App() {
       )}
       {play === 1 && (
         <>
-          <div className="h-full w-full max-w-screen-xl flex flex-col">
+          <div className="h-full w-full max-w-screen-xl flex flex-col relative">
+            <div className="absolute top-5 left-5 z-[99]">
+              <ToggleMusic />
+            </div>
             {start === 0 ? (
               <StartScreen onDifficultyClick={handleStartChange} />
             ) : (

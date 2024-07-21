@@ -10,6 +10,14 @@
     perspective: 1000px;
   }
 
+  .card-outer {
+    @apply h-full transition-transform duration-300;
+  }
+
+  .card:hover .card-outer {
+    @apply landscape:-translate-y-[5%];
+  }
+
   .card-inner {
     @apply h-full w-full relative transition-transform duration-500;
     transform-style: preserve-3d;
