@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { setBGM } from "./assets/components/music";
-import { startGame } from "./assets/components/game";
+import { getDifficulty, startGame } from "./assets/components/game";
 import StartScreen from "./assets/components/StartScreen";
 import GameScreen from "./assets/components/GameScreen";
 import ToggleMusic from "./assets/components/ToggleMusic";
@@ -49,7 +49,7 @@ function App() {
             {start === 0 ? (
               <StartScreen onDifficultyClick={handleStartChange} />
             ) : (
-              <GameScreen />
+              <GameScreen difficulty={getDifficulty()} />
             )}
           </div>
           <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center">

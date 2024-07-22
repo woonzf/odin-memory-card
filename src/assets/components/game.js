@@ -9,7 +9,6 @@ const difficultyList = [
 ];
 
 let difficulty = null;
-let score = 0;
 let highScore = 0;
 let pokemonList = null;
 let memory = [];
@@ -21,8 +20,6 @@ if (localStorage.pokemonMemoryCard)
 export function checkMemory(id) {
   if (!memory.includes(id)) memory.push(id);
   else return false;
-  score += 1;
-  if (score > highScore) setHighScore(score);
   return true;
 }
 
@@ -76,11 +73,7 @@ export function getHighScore() {
   return highScore;
 }
 
-function setHighScore(score) {
+export function setHighScore(score) {
   highScore = score;
   localStorage.setItem("pokemonMemoryCard", highScore);
-}
-
-export function getScore() {
-  return score;
 }
