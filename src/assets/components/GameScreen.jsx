@@ -7,9 +7,10 @@ import {
   setHighScore,
 } from "./game";
 import { delay, flipCards } from "./flip";
+import { setBGM } from "./music";
 import Card from "./Card";
 
-function GameScreen({ difficulty }) {
+function GameScreen({ difficulty, onWin, onLose }) {
   const [score, setScore] = useState(0);
   const [pokemonList, setPokemonList] = useState(getPokemonList);
   const highScore = getHighScore();
@@ -21,6 +22,12 @@ function GameScreen({ difficulty }) {
       if (scoreNew > highScore) setHighScore(scoreNew);
       setScore(scoreNew);
 
+      if (scoreNew === difficulty.card) {
+        setBGM(+(`${difficulty.id + 1}` + "1"));
+        onWin();
+        return;
+      }
+
       // Flip and shuffle cards
       flipCards();
       await delay(600);
@@ -28,6 +35,9 @@ function GameScreen({ difficulty }) {
       setPokemonList([...getPokemonList()]);
       await delay(100);
       flipCards();
+    } else {
+      setBGM(5);
+      onLose();
     }
   }
 

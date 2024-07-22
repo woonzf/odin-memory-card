@@ -17,6 +17,8 @@ export default {
         'logo': 'slide-up 2s 1',
         'presents': 'fade-in-out 10s 1',
         'start': 'fade-in 3s 1',
+        'slide-right': 'slide-right 1s 1',
+        'end': 'end 500ms 1',
       },
       keyframes: {
         'slide-up': {
@@ -30,6 +32,14 @@ export default {
         'fade-in': {
           '0%, 75%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        'slide-right': {
+          '0%': {transform: 'translateX(-100%)'},
+          '100%': {transform: 'translateX(0)'},
+        },
+        'end': {
+          '0%': { height: '0'},
+          '100%': { height: '33%' },
         },
       },
     },

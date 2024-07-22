@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { setBGM } from "./assets/components/music";
 import { getDifficulty, startGame } from "./assets/components/game";
+import { delay } from "./assets/components/flip";
 import StartScreen from "./assets/components/StartScreen";
 import GameScreen from "./assets/components/GameScreen";
 import ToggleMusic from "./assets/components/ToggleMusic";
+import Popup from "./assets/components/Popup";
 import "./App.css";
 
 function App() {
   const [play, setPlay] = useState(0);
+  const [load, setLoad] = useState(0);
   const [start, setStart] = useState(0);
+  const [win, setWin] = useState(0);
+  const [lose, setLose] = useState(0);
 
   function handlePlayChange() {
     setBGM(0);
@@ -16,8 +21,9 @@ function App() {
   }
 
   async function handleStartChange(e) {
-    await startGame(e.target.id);
-    setStart(+!start);
+    setStart(1);
+    await Promise.all([startGame(e.target.id), delay(5000)]);
+    setLoad(1);
   }
 
   return (
@@ -46,13 +52,27 @@ function App() {
             <div className="absolute top-5 left-5 z-[99]">
               <ToggleMusic />
             </div>
-            {start === 0 ? (
+            {start === 0 && (
               <StartScreen onDifficultyClick={handleStartChange} />
-            ) : (
-              <GameScreen difficulty={getDifficulty()} />
+            )}
+            {start === 1 && load === 1 && (
+              <GameScreen
+                difficulty={getDifficulty()}
+                onWin={() => {
+                  setWin(1);
+                }}
+                onLose={() => {
+                  setLose(1);
+                }}
+              />
             )}
           </div>
-          <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center">
+          {start === 1 && load === 0 && (
+            <Popup difficulty={getDifficulty()} style={0} />
+          )}
+          {win === 1 && <Popup difficulty={getDifficulty()} style={1} />}
+          {lose === 1 && <Popup difficulty={getDifficulty()} style={2} />}
+          <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center z-[99]">
             <a
               className="underline"
               href="https://github.com/woonzf"
