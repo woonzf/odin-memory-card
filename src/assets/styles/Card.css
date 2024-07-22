@@ -18,6 +18,10 @@
     @apply landscape:-translate-y-[5%];
   }
 
+  .card:hover .card-front {
+    @apply landscape:border-white transition-colors duration-300;
+  }
+
   .card-inner {
     @apply h-full w-full relative transition-transform duration-500;
     transform-style: preserve-3d;

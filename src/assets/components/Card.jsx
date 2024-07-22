@@ -1,4 +1,5 @@
 import { Howl } from "howler";
+import { updateImgLoad } from "./flip";
 import pokeball from "../img/pokeball.png";
 import "../styles/Card.css";
 
@@ -15,9 +16,13 @@ function Card({ pokemon, id, onClick }) {
   return (
     <button className="card" onClick={handleCardClick}>
       <div className="card-outer">
-        <div className="card-inner">
+        <div className="card-inner flip">
           <div className="card-front flex flex-col justify-evenly items-center">
-            <img className="w-full" src={pokemon.sprite} />
+            <img
+              className="w-full"
+              src={pokemon.sprite}
+              onLoad={updateImgLoad}
+            />
             <div className="text-xs lg:text-xl capitalize">{pokemon.name}</div>
           </div>
           <div className="card-back flex justify-center items-center">
