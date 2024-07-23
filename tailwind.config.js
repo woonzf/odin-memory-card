@@ -19,6 +19,8 @@ export default {
         'start': 'fade-in 3s 1',
         'slide-right': 'slide-right 1s 1',
         'end': 'end 500ms 1',
+        'bounce-200': 'bounce 1s 200ms infinite',
+        'bounce-400': 'bounce 1s 400ms infinite',
       },
       keyframes: {
         'slide-up': {

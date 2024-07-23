@@ -1,5 +1,3 @@
-import "../../App.css";
-
 function Footer() {
   return (
     <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center z-[99]">

@@ -18,7 +18,11 @@ function Popup({ state, onReplay, onChangeDifficulty }) {
                 <div>Difficulty: {difficulty.name}</div>
                 <small>Cards: {difficulty.card}</small>
               </div>
-              <big className="self-end animate-bounce">Now Loading...</big>
+              <big className="self-end flex">
+                <div className="animate-bounce">Now&nbsp;</div>
+                <div className="animate-bounce-200">Loading&nbsp;</div>
+                <div className="animate-bounce-400">...</div>
+              </big>
             </div>
           )}
           {state > 4 && (
