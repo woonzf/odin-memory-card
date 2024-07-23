@@ -1,4 +1,4 @@
-import { getDifficultyList } from "./game";
+import { getDifficultyList } from "../modules/game";
 
 function Difficulty({ onClick }) {
   const difficultyList = getDifficultyList();

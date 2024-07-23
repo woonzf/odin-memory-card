@@ -4,7 +4,7 @@ function Title({ isFirstTime }) {
       <div
         className={
           "flex flex-col justify-center items-center gap-[1vh] select-none " +
-          (isFirstTime ? "animate-logo" : "")
+          (isFirstTime ? "animate-logo translate-y-full" : "")
         }
         id="title"
       >

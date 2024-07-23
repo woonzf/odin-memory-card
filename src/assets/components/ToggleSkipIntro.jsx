@@ -1,4 +1,4 @@
-import { skipBGMStart } from "./music";
+import { skipBGMStart } from "../modules/music";
 
 function ToggleSkipIntro({ onClick }) {
   return (

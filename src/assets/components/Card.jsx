@@ -1,5 +1,5 @@
 import { Howl } from "howler";
-import { updateImgLoad } from "./flip";
+import { updateImgLoad } from "../modules/flip";
 import pokeball from "../img/pokeball.png";
 import "../styles/Card.css";
 

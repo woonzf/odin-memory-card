@@ -1,4 +1,5 @@
 import { Howl, Howler } from "howler";
+
 import opening from "../music/opening.mp3";
 import wildPokemonBattle from "../music/wild_pokemon_battle.mp3";
 import wildPokemonVictory from "../music/wild_pokemon_victory.mp3";

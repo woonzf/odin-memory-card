@@ -1,5 +1,4 @@
-import { getDifficulty } from "./game";
-import "../styles/Screen.css";
+import { getDifficulty } from "../modules/game";
 
 function Popup({ state, onReplay, onChangeDifficulty }) {
   const difficulty = getDifficulty();

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { startGame } from "./assets/components/game";
-import { delay } from "./assets/components/flip";
+import { startGame } from "./assets/modules/game";
+import { delay } from "./assets/modules/flip";
 
 import Landing from "./assets/components/Landing";
 import ToggleMusic from "./assets/components/ToggleMusic";

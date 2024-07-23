@@ -1,4 +1,4 @@
-import { setBGM } from "./music";
+import { setBGM } from "../modules/music";
 
 function Landing({ onClick }) {
   function handleClick() {

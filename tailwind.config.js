@@ -14,7 +14,7 @@ export default {
         'luckiest-guy': ['Luckiest Guy'],
       },
       animation: {
-        'logo': 'slide-up 2s 1',
+        'logo': 'slide-up 2s 1ms 1 forwards',
         'presents': 'fade-in-out 11s 1',
         'start': 'fade-in 3s 1',
         'slide-right': 'slide-right 1s 1',

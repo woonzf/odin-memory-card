@@ -6,9 +6,9 @@ import {
   shufflePokemonList,
   setHighScore,
   getDifficulty,
-} from "./game";
-import { delay, flipCards } from "./flip";
-import { setBGM } from "./music";
+} from "../modules/game";
+import { delay, flipCards } from "../modules/flip";
+import { setBGM } from "../modules/music";
 
 import Card from "./Card";
 

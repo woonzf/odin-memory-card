@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getIsPlaying, playBGM } from "./music";
+import { getIsPlaying, playBGM } from "../modules/music";
 
 function ToggleMusic() {
   const [playMusic, setPlayMusic] = useState(getIsPlaying);
