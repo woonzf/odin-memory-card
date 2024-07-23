@@ -15,6 +15,7 @@ import Card from "./Card";
 function Game({ onWin, onLose }) {
   const [score, setScore] = useState(0);
   const [pokemonList, setPokemonList] = useState(getPokemonList);
+  const [isDisabled, setIsDisabled] = useState(0);
 
   const highScore = getHighScore();
   const difficulty = getDifficulty();
@@ -32,13 +33,16 @@ function Game({ onWin, onLose }) {
         return;
       }
 
-      // Flip and shuffle cards
+      // Disable, flip, shuffle, flip, enable cards
+      setIsDisabled(1);
       flipCards();
-      await delay(600);
+      await delay(500);
       shufflePokemonList();
       setPokemonList([...getPokemonList()]);
-      await delay(100);
+      await delay(200);
       flipCards();
+      await delay(500);
+      setIsDisabled(0);
     } else {
       setBGM(5);
       onLose();
@@ -70,6 +74,7 @@ function Game({ onWin, onLose }) {
                   pokemon={pokemon}
                   id={pokemon.id}
                   onClick={handleResult}
+                  disabled={isDisabled}
                 />
               );
             })}

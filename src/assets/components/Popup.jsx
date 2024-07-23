@@ -5,12 +5,7 @@ function Popup({ state, onReplay, onChangeDifficulty }) {
 
   return (
     <div className="h-full w-full flex items-center absolute">
-      <div
-        className={
-          "h-[33%] w-full bg-pokeblue bg-opacity-90 border-y-[0.5vh] border-pokedarkblue text-white text-2xl lg:text-5xl flex justify-center items-center " +
-          (state === 3 ? "animate-end" : "")
-        }
-      >
+      <div className="h-[33%] w-full bg-pokeblue bg-opacity-90 border-y-[0.5vh] border-pokedarkblue text-white text-2xl lg:text-5xl flex justify-center items-center animate-end">
         <div className="h-full w-full max-w-screen-lg portrait:max-w-screen-md p-5">
           {state === 3 && (
             <div className="h-full pt-3 flex flex-col justify-between">

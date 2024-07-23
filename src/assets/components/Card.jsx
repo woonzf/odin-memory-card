@@ -3,7 +3,7 @@ import { updateImgLoad } from "../modules/flip";
 import pokeball from "../img/pokeball.png";
 import "../styles/Card.css";
 
-function Card({ pokemon, id, onClick }) {
+function Card({ pokemon, id, onClick, disabled }) {
   const cry = new Howl({
     src: [pokemon.cry],
   });
@@ -14,7 +14,7 @@ function Card({ pokemon, id, onClick }) {
   }
 
   return (
-    <button className="card" onClick={handleCardClick}>
+    <button className="card" onClick={handleCardClick} disabled={disabled}>
       <div className="card-outer">
         <div className="card-inner flip">
           <div className="card-front flex flex-col justify-evenly items-center">
