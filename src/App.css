@@ -10,6 +10,10 @@
   .btn-difficulty {
     @apply text-2xl lg:text-4xl;
   }
+
+  .link-wrapper {
+    @apply w-[100px] lg:w-[150px] text-center;
+  }
 }
 
 @layer utilities {

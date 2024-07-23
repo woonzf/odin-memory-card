@@ -15,7 +15,7 @@ export default {
       },
       animation: {
         'logo': 'slide-up 2s 1ms 1 forwards',
-        'presents': 'fade-in-out 11s 1',
+        'presents': 'fade-in-out 5.5s 2',
         'start': 'fade-in 3s 1',
         'slide-right': 'slide-right 1s 1',
         'end': 'end 500ms 1',
