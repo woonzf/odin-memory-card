@@ -1,88 +1,105 @@
 import { useState } from "react";
-import { setBGM } from "./assets/components/music";
-import { getDifficulty, startGame } from "./assets/components/game";
+import { startGame } from "./assets/components/game";
 import { delay } from "./assets/components/flip";
-import StartScreen from "./assets/components/StartScreen";
-import GameScreen from "./assets/components/GameScreen";
+
+import Landing from "./assets/components/Landing";
 import ToggleMusic from "./assets/components/ToggleMusic";
+import ToggleSkipIntro from "./assets/components/ToggleSkipIntro";
+import Intro from "./assets/components/Intro";
+import Title from "./assets/components/Title";
+import Start from "./assets/components/Start";
+import Difficulty from "./assets/components/Difficulty";
+import Game from "./assets/components/Game";
 import Popup from "./assets/components/Popup";
+import Footer from "./assets/components/Footer";
+
 import "./App.css";
 
 function App() {
-  const [play, setPlay] = useState(0);
-  const [load, setLoad] = useState(0);
-  const [start, setStart] = useState(0);
-  const [win, setWin] = useState(0);
-  const [lose, setLose] = useState(0);
+  const [state, setState] = useState(0);
+  const [intro, setIntro] = useState(0);
 
-  function handlePlayChange() {
-    setBGM(0);
-    setPlay(1);
+  if (state === 1 && intro === 0) {
+    setTimeout(() => {
+      setIntro(1);
+    }, 10000);
   }
 
-  async function handleStartChange(e) {
-    setStart(1);
-    await Promise.all([startGame(e.target.id), delay(5000)]);
-    setLoad(1);
+  async function handleDifficultyClick(e) {
+    let id = null;
+    if (typeof e === "number") id = e;
+    else id = e.target.id;
+
+    setState(3);
+    await Promise.all([startGame(id), delay(5000)]);
+    setState(4);
   }
 
   return (
     <>
-      {play === 0 && (
-        <button
-          className="h-full w-full text-2xl lg:text-5xl text-white flex justify-center"
-          onClick={handlePlayChange}
-        >
-          <div className="h-full w-full max-w-screen-xl flex flex-col">
-            <div className="h-[43%] flex justify-center items-end">
-              <div className="h-[50%] px-4 flex items-center">
-                A memory card game inspired by Pokémon...
-              </div>
-            </div>
-            <div className="h-[31%] w-full mt-[26vh] flex flex-col justify-center">
-              <div>Press Anywhere</div>
-              <div>To Continue...</div>
-            </div>
-          </div>
-        </button>
+      {state === 0 && (
+        <Landing
+          onClick={() => {
+            setState(1);
+          }}
+        />
       )}
-      {play === 1 && (
+      {state > 0 && (
         <>
           <div className="h-full w-full max-w-screen-xl flex flex-col relative">
-            <div className="absolute top-5 left-5 z-[99]">
-              <ToggleMusic />
-            </div>
-            {start === 0 && (
-              <StartScreen onDifficultyClick={handleStartChange} />
+            <ToggleMusic />
+            {state > 0 && state < 4 && (
+              <div className="h-full flex flex-col items-center text-white relative">
+                {intro === 0 && (
+                  <ToggleSkipIntro
+                    onClick={() => {
+                      setIntro(1);
+                    }}
+                  />
+                )}
+                {state > 0 && state < 3 && (
+                  <div className="h-[43%] flex items-end">
+                    {intro === 0 && <Intro />}
+                    {intro === 1 && <Title />}
+                  </div>
+                )}
+                {intro === 1 && (
+                  <div className="h-[31%] w-full mt-[calc(26vh+30px)] flex items-center">
+                    {state === 1 && (
+                      <Start
+                        onClick={() => {
+                          setState(2);
+                        }}
+                      />
+                    )}
+                    {state === 2 && (
+                      <Difficulty onClick={handleDifficultyClick} />
+                    )}
+                  </div>
+                )}
+              </div>
             )}
-            {start === 1 && load === 1 && (
-              <GameScreen
-                difficulty={getDifficulty()}
+            {state > 3 && (
+              <Game
                 onWin={() => {
-                  setWin(1);
+                  setState(5);
                 }}
                 onLose={() => {
-                  setLose(1);
+                  setState(6);
                 }}
               />
             )}
           </div>
-          {start === 1 && load === 0 && (
-            <Popup difficulty={getDifficulty()} style={0} />
+          {(state === 3 || state > 4) && (
+            <Popup
+              state={state}
+              onReplay={handleDifficultyClick}
+              onChangeDifficulty={() => {
+                setState(2);
+              }}
+            />
           )}
-          {win === 1 && <Popup difficulty={getDifficulty()} style={1} />}
-          {lose === 1 && <Popup difficulty={getDifficulty()} style={2} />}
-          <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center z-[99]">
-            <a
-              className="underline"
-              href="https://github.com/woonzf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              WZF
-            </a>
-            &nbsp;&copy; 2024
-          </footer>
+          <Footer />
         </>
       )}
     </>

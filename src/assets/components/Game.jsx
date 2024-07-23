@@ -5,15 +5,19 @@ import {
   checkMemory,
   shufflePokemonList,
   setHighScore,
+  getDifficulty,
 } from "./game";
 import { delay, flipCards } from "./flip";
 import { setBGM } from "./music";
+
 import Card from "./Card";
 
-function GameScreen({ difficulty, onWin, onLose }) {
+function Game({ onWin, onLose }) {
   const [score, setScore] = useState(0);
   const [pokemonList, setPokemonList] = useState(getPokemonList);
+
   const highScore = getHighScore();
+  const difficulty = getDifficulty();
 
   async function handleResult(id) {
     if (checkMemory(id)) {
@@ -76,4 +80,4 @@ function GameScreen({ difficulty, onWin, onLose }) {
   );
 }
 
-export default GameScreen;
+export default Game;
