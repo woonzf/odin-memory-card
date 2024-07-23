@@ -18,6 +18,7 @@ export default {
         'presents': 'fade-in-out 5.5s 2',
         'start': 'fade-in 3s 1',
         'slide-right': 'slide-right 1s 1',
+        'slide-left': 'slide-left 1s 1',
         'end': 'end 500ms 1',
         'bounce-200': 'bounce 1s 200ms infinite',
         'bounce-400': 'bounce 1s 400ms infinite',
@@ -37,6 +38,10 @@ export default {
         },
         'slide-right': {
           '0%': {transform: 'translateX(-100%)'},
+          '100%': {transform: 'translateX(0)'},
+        },
+        'slide-left': {
+          '0%': {transform: 'translateX(100%)'},
           '100%': {transform: 'translateX(0)'},
         },
         'end': {

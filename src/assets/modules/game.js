@@ -1,5 +1,6 @@
 import { setBGM } from "./music";
 import { generatePokemonList } from "./pokedex";
+import { setCharacter } from "./character";
 
 const difficultyList = [
   { id: 0, name: "Wild Pokémon", card: 3 },
@@ -51,6 +52,7 @@ export async function startGame(index) {
   setBGM(+index + 1);
   memory = [];
   setDifficulty(index);
+  setCharacter(index);
   pokemonList = await generatePokemonList(difficulty.card);
 }
 
