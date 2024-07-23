@@ -1,3 +1,8 @@
+:root {
+  --pokedarkblue: #21386e;
+  --pokeblue: #2a74ba;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,6 +19,10 @@
   .link-wrapper {
     @apply w-[100px] lg:w-[150px] text-center;
   }
+
+  .shadow-pokedarkblue {
+    text-shadow: -4px 4px 1px var(--pokedarkblue);
+  }
 }
 
 @layer utilities {
@@ -22,7 +31,7 @@
   }
 
   #logo-memory-card {
-    text-shadow: -4px 4px 1px #21386e;
+    @apply text-[#ffcb05] shadow-pokedarkblue;
     -webkit-text-stroke: 3px #2a74ba;
   }
 }

@@ -13,10 +13,7 @@ function Title({ isFirstTime }) {
           src="./src/assets/img/pokemon-logo.png"
           alt="Pokémon"
         />
-        <div
-          className="text-3xl lg:text-5xl text-[#ffcb05]"
-          id="logo-memory-card"
-        >
+        <div className="text-3xl lg:text-5xl" id="logo-memory-card">
           Mémory Card
         </div>
       </div>
