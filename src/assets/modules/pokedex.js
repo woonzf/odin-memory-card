@@ -1,3 +1,5 @@
+import { getRandomInt } from "./helper";
+
 // Gen 1 pokemon only
 let pokedexCount = 152;
 
@@ -33,8 +35,4 @@ function generateIndexList(card) {
   }
 
   return list;
-}
-
-function getRandomInt(n) {
-  return Math.floor(Math.random() * n);
 }
