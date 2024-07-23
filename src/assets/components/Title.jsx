@@ -1,8 +1,11 @@
-function Title() {
+function Title({ isFirstTime }) {
   return (
     <div className="h-fit overflow-hidden">
       <div
-        className="flex flex-col justify-center items-center gap-[1vh] select-none animate-logo"
+        className={
+          "flex flex-col justify-center items-center gap-[1vh] select-none " +
+          (isFirstTime ? "animate-logo" : "")
+        }
         id="title"
       >
         <img

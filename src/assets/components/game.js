@@ -48,9 +48,10 @@ function shuffle(array) {
 }
 
 export async function startGame(index) {
+  setBGM(+index + 1);
+  memory = [];
   setDifficulty(index);
   pokemonList = await generatePokemonList(difficulty.card);
-  setBGM(+index + 1);
 }
 
 export function getPokemonList() {

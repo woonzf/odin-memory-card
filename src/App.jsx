@@ -18,11 +18,12 @@ import "./App.css";
 function App() {
   const [state, setState] = useState(0);
   const [intro, setIntro] = useState(0);
+  const [isFirstTime, setIsFirstTime] = useState(1);
 
   if (state === 1 && intro === 0) {
     setTimeout(() => {
       setIntro(1);
-    }, 10000);
+    }, 11000);
   }
 
   async function handleDifficultyClick(e) {
@@ -33,6 +34,7 @@ function App() {
     setState(3);
     await Promise.all([startGame(id), delay(5000)]);
     setState(4);
+    setIsFirstTime(0);
   }
 
   return (
@@ -60,7 +62,7 @@ function App() {
                 {state > 0 && state < 3 && (
                   <div className="h-[43%] flex items-end">
                     {intro === 0 && <Intro />}
-                    {intro === 1 && <Title />}
+                    {intro === 1 && <Title isFirstTime={isFirstTime} />}
                   </div>
                 )}
                 {intro === 1 && (
