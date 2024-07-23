@@ -4,6 +4,7 @@ import { delay } from "./assets/modules/flip";
 
 import Landing from "./assets/components/Landing";
 import ToggleMusic from "./assets/components/ToggleMusic";
+import ToggleHelp from "./assets/components/ToggleHelp";
 import ToggleSkipIntro from "./assets/components/ToggleSkipIntro";
 import Intro from "./assets/components/Intro";
 import Title from "./assets/components/Title";
@@ -19,6 +20,7 @@ function App() {
   const [state, setState] = useState(0);
   const [intro, setIntro] = useState(0);
   const [isFirstTime, setIsFirstTime] = useState(1);
+  const [help, setHelp] = useState(0);
 
   if (state === 1 && intro === 0) {
     setTimeout(() => {
@@ -37,6 +39,10 @@ function App() {
     setIsFirstTime(0);
   }
 
+  function handleHelpChange() {
+    setHelp(+!help);
+  }
+
   return (
     <>
       {state === 0 && (
@@ -49,7 +55,10 @@ function App() {
       {state > 0 && (
         <>
           <div className="h-full w-full max-w-screen-xl flex flex-col relative">
-            <ToggleMusic />
+            <div className="flex items-center gap-[1vh] absolute top-5 left-5 z-[99]">
+              <ToggleMusic />
+              <ToggleHelp onClick={handleHelpChange} />
+            </div>
             {state > 0 && state < 4 && (
               <div className="h-full flex flex-col items-center text-white relative">
                 {intro === 0 && (
@@ -101,6 +110,7 @@ function App() {
               }}
             />
           )}
+          {help === 1 && <Popup help={help} onClose={handleHelpChange} />}
           <Footer />
         </>
       )}

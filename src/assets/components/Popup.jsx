@@ -1,6 +1,6 @@
 import { getDifficulty } from "../modules/game";
 
-function Popup({ state, onReplay, onChangeDifficulty }) {
+function Popup({ state, onReplay, onChangeDifficulty, help, onClose }) {
   const difficulty = getDifficulty();
 
   return (
@@ -38,6 +38,20 @@ function Popup({ state, onReplay, onChangeDifficulty }) {
                   <small>Change Difficulty</small>
                 </button>
               </div>
+            </div>
+          )}
+          {help === 1 && (
+            <div className="h-full flex flex-col justify-center items-center gap-[1vh] relative">
+              <button
+                className="absolute top-3 right-3 hover-scale"
+                onClick={onClose}
+              >
+                X
+              </button>
+              <big>How to play?</big>
+              <small className="text-center">
+                Do not pick the same card twice!
+              </small>
             </div>
           )}
         </div>
