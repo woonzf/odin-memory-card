@@ -9,6 +9,7 @@ import {
 } from "../modules/game";
 import { delay, flipCards } from "../modules/flip";
 import { setBGM } from "../modules/music";
+import { getCharacter } from "../modules/character";
 
 import Card from "./Card";
 
@@ -19,6 +20,7 @@ function Game({ onWin, onLose }) {
 
   const highScore = getHighScore();
   const difficulty = getDifficulty();
+  const character = getCharacter();
 
   async function handleResult(id) {
     if (checkMemory(id)) {
@@ -58,11 +60,19 @@ function Game({ onWin, onLose }) {
         </div>
       </header>
       <main className="h-full w-full flex flex-col items-center">
-        <div className="text-center text-lg md:text-2xl">
+        <div className="w-full text-center text-lg md:text-2xl relative">
           <div>- Difficulty -</div>
           <div>{difficulty.name}</div>
           <div>
             {score} / {difficulty.card}
+          </div>
+          <div className="h-full w-1/2 flex justify-end absolute top-0 right-0 z-[-1]">
+            <div className="h-full w-full flex flex-col justify-center relative">
+              <img className="h-full object-cover" src={character.sprite} />
+              <div className="absolute bottom-0 right-5 shadow-pokedarkblue">
+                {character.name}
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex">
