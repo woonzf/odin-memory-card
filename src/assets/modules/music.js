@@ -1,4 +1,5 @@
 import { Howl, Howler } from "howler";
+import { getIsPlayingLS, setIsPlayingLS } from "./localStorage";
 
 import opening from "../music/opening.mp3";
 import wildPokemonBattle from "../music/wild_pokemon_battle.mp3";
@@ -31,9 +32,10 @@ const bgmList = list.map((bgm) => {
   });
 });
 
-let isPlaying = 1;
+let isPlaying = getIsPlayingLS();
 let bgm = null;
 
+if (!isPlaying) Howler.mute(true);
 Howler.volume(0.5);
 
 export function setBGM(index) {
@@ -77,9 +79,11 @@ export function playBGM() {
   if (isPlaying) {
     Howler.mute(true);
     isPlaying = 0;
+    setIsPlayingLS(isPlaying);
   } else {
     Howler.mute(false);
     isPlaying = 1;
+    setIsPlayingLS(isPlaying);
   }
 }
 

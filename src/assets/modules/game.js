@@ -1,6 +1,7 @@
 import { setBGM } from "./music";
 import { generatePokemonList } from "./pokedex";
 import { setCharacter } from "./character";
+import { getHighScoreLS, setHighScoreLS } from "./localStorage";
 
 const difficultyList = [
   { id: 0, name: "Wild Pokémon", card: 3 },
@@ -10,13 +11,9 @@ const difficultyList = [
 ];
 
 let difficulty = null;
-let highScore = 0;
+let highScore = getHighScoreLS();
 let pokemonList = null;
 let memory = [];
-
-// Retrieve high score from localStorage if present
-if (localStorage.pokemonMemoryCard)
-  highScore = localStorage.getItem("pokemonMemoryCard");
 
 export function checkMemory(id) {
   if (!memory.includes(id)) memory.push(id);
@@ -78,5 +75,5 @@ export function getHighScore() {
 
 export function setHighScore(score) {
   highScore = score;
-  localStorage.setItem("pokemonMemoryCard", highScore);
+  setHighScoreLS(highScore);
 }
