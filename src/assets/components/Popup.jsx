@@ -16,13 +16,17 @@ function Popup({ state, onReplay, onChangeDifficulty, help, onClose }) {
         <div className="h-full w-full max-w-screen-lg portrait:max-w-screen-md">
           {state === 3 && (
             <div className="h-full p-5 flex flex-col justify-between relative overflow-hidden">
-              <Character character={character} />
+              <Character character={character} difficulty={difficulty} />
               <Loading difficulty={difficulty} character={character} />
             </div>
           )}
           {state > 4 && (
             <div className="h-full p-5 flex flex-col justify-evenly items-center relative overflow-hidden">
-              <Character character={character} state={state} />
+              <Character
+                character={character}
+                difficulty={difficulty}
+                state={state}
+              />
               <Result
                 state={state}
                 difficulty={difficulty}

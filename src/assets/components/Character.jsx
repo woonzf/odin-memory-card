@@ -1,4 +1,4 @@
-function Character({ character, state }) {
+function Character({ character, difficulty, state }) {
   return (
     <div
       className={
@@ -6,7 +6,12 @@ function Character({ character, state }) {
         (state > 4 ? "opacity-80" : "")
       }
     >
-      <img className="h-full self-end object-cover" src={character.sprite} />
+      <img
+        className={
+          "h-full self-end object-cover " + (difficulty.id === 0 ? "p-5" : "")
+        }
+        src={character.sprite}
+      />
     </div>
   );
 }

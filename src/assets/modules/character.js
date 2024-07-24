@@ -1,31 +1,41 @@
 import { getRandomInt } from "./helper";
 
-// Trainer
-import beauty from "../img/VSBeauty.png";
-import blackBelt from "../img/VSBlack_Belt.png";
-import bugCatcher from "../img/VSBug_Catcher.png";
-import psychic from "../img/VSPsychic.png";
-import sailor from "../img/VSSailor.png";
-import swimmer from "../img/VSSwimmer_M_VI.png";
+// Wild Pokemon
+import bulbasaur from "../img/wild_pokemon/bulbasaur-256w.png";
+import charmander from "../img/wild_pokemon/charmander-256w.png";
+import squirtle from "../img/wild_pokemon/squirtle-256w.png";
+import pikachu from "../img/wild_pokemon/pikachu-256w.png";
 
-const trainer = [
-  { id: 0, name: "Beauty", sprite: beauty },
-  { id: 1, name: "Black Belt", sprite: blackBelt },
-  { id: 2, name: "Bug Catcher", sprite: bugCatcher },
-  { id: 3, name: "Psychic", sprite: psychic },
-  { id: 4, name: "Sailor", sprite: sailor },
-  { id: 5, name: "Swimmer", sprite: swimmer },
+// Trainer
+import beauty from "../img/trainer/VSBeauty.png";
+import blackBelt from "../img/trainer/VSBlack_Belt.png";
+import bugCatcher from "../img/trainer/VSBug_Catcher.png";
+import psychic from "../img/trainer/VSPsychic.png";
+import sailor from "../img/trainer/VSSailor.png";
+import swimmer from "../img/trainer/VSSwimmer_M_VI.png";
+
+const wildPokemon = [
+  { name: "Bulbasaur", sprite: bulbasaur },
+  { name: "Charmander", sprite: charmander },
+  { name: "Squirtle", sprite: squirtle },
+  { name: "Pikachu", sprite: pikachu },
 ];
 
-const list = [trainer];
+const trainer = [
+  { name: "Beauty", sprite: beauty },
+  { name: "Black Belt", sprite: blackBelt },
+  { name: "Bug Catcher", sprite: bugCatcher },
+  { name: "Psychic", sprite: psychic },
+  { name: "Sailor", sprite: sailor },
+  { name: "Swimmer", sprite: swimmer },
+];
+
+const list = [wildPokemon, trainer];
 let currentCharacter = null;
 
-export function setCharacter(id) {
-  let index = id - 1;
+export function setCharacter(index) {
   let character = list[index];
-  if (!Array.isArray(character)) currentCharacter = character;
-  else currentCharacter = character[getRandomInt(character.length)];
-  console.log(currentCharacter);
+  currentCharacter = character[getRandomInt(character.length)];
 }
 
 export function getCharacter() {
