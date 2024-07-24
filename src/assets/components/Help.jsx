@@ -2,7 +2,7 @@ function Help({ onClick }) {
   return (
     <div className="h-full flex flex-col justify-center items-center gap-[1vh] relative">
       <button
-        className="absolute top-3 right-3 hover-scale shadow-pokedarkblue"
+        className="absolute top-5 right-5 hover-scale shadow-pokedarkblue"
         onClick={onClick}
       >
         X
