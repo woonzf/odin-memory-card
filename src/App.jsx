@@ -101,7 +101,7 @@ function App() {
               />
             )}
           </div>
-          {(state === 3 || state > 4) && (
+          {(state === 3 || state > 4) && help === 0 && (
             <Popup
               state={state}
               onReplay={handleDifficultyClick}
