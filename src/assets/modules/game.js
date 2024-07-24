@@ -46,9 +46,9 @@ function shuffle(array) {
 }
 
 export async function startGame(index) {
-  setBGM(+index + 1);
   memory = [];
   setDifficulty(index);
+  setBGM(1, difficulty.id);
   setCharacter(index);
   pokemonList = await generatePokemonList(difficulty.card);
 }

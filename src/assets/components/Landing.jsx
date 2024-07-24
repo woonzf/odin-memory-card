@@ -1,15 +1,8 @@
-import { setBGM } from "../modules/music";
-
 function Landing({ onClick }) {
-  function handleClick() {
-    setBGM(0);
-    onClick();
-  }
-
   return (
     <button
       className="h-full w-full text-2xl lg:text-5xl text-white flex justify-center"
-      onClick={handleClick}
+      onClick={onClick}
     >
       <div className="h-full w-full max-w-screen-xl flex flex-col">
         <div className="h-[43%] flex justify-center items-end">

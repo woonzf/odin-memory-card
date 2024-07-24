@@ -30,7 +30,7 @@ function Game({ onWin, onLose }) {
       setScore(scoreNew);
 
       if (scoreNew === difficulty.card) {
-        setBGM(+(`${difficulty.id + 1}` + "1"));
+        setBGM(2, difficulty.id);
         onWin();
         return;
       }
@@ -46,7 +46,7 @@ function Game({ onWin, onLose }) {
       await delay(500);
       setIsDisabled(0);
     } else {
-      setBGM(5);
+      setBGM(0, 2);
       onLose();
     }
   }

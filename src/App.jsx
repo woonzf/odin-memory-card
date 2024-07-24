@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { setBGM } from "./assets/modules/music";
 import { startGame } from "./assets/modules/game";
 import { delay } from "./assets/modules/flip";
 
@@ -28,6 +29,16 @@ function App() {
     }, 11000);
   }
 
+  function handleLandingClick() {
+    setBGM(0, 0);
+    setState(1);
+  }
+
+  function handleToDifficulty() {
+    if (!isFirstTime) setBGM(0, 1);
+    setState(2);
+  }
+
   async function handleDifficultyClick(e) {
     let id = null;
     if (typeof e === "number") id = e;
@@ -45,13 +56,7 @@ function App() {
 
   return (
     <>
-      {state === 0 && (
-        <Landing
-          onClick={() => {
-            setState(1);
-          }}
-        />
-      )}
+      {state === 0 && <Landing onClick={handleLandingClick} />}
       {state > 0 && (
         <>
           <div className="h-full w-full max-w-screen-xl flex flex-col relative">
@@ -76,13 +81,7 @@ function App() {
                 )}
                 {intro === 1 && (
                   <div className="h-[31%] w-full mt-[calc(26vh+30px)] flex items-center">
-                    {state === 1 && (
-                      <Start
-                        onClick={() => {
-                          setState(2);
-                        }}
-                      />
-                    )}
+                    {state === 1 && <Start onClick={handleToDifficulty} />}
                     {state === 2 && (
                       <Difficulty onClick={handleDifficultyClick} />
                     )}
@@ -105,9 +104,7 @@ function App() {
             <Popup
               state={state}
               onReplay={handleDifficultyClick}
-              onChangeDifficulty={() => {
-                setState(2);
-              }}
+              onChangeDifficulty={handleToDifficulty}
             />
           )}
           {help === 1 && <Popup help={help} onClose={handleHelpChange} />}
@@ -119,3 +116,12 @@ function App() {
 }
 
 export default App;
+
+// state
+// 0 = landing
+// 1 = intro
+// 2 = difficulty
+// 3 = loading
+// 4 = game
+// 5 = win
+// 6 = lose
