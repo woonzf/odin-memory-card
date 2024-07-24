@@ -22,8 +22,10 @@ function Game({ onWin, onLose, onBack }) {
   const difficulty = getDifficulty();
   const character = getCharacter();
 
-  async function handleResult(id) {
+  async function handleResult(id, cry) {
     if (checkMemory(id)) {
+      cry.play();
+
       // Update score
       let scoreNew = score + 1;
       if (scoreNew > highScore) setHighScore(scoreNew);

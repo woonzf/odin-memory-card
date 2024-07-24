@@ -9,8 +9,7 @@ function Card({ pokemon, id, onClick, disabled }) {
   });
 
   function handleCardClick() {
-    cry.play();
-    onClick(id);
+    onClick(id, cry);
   }
 
   return (
