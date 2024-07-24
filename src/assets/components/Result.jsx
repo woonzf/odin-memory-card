@@ -1,8 +1,14 @@
-function Result({ state, difficulty, onReplay, onChangeDifficulty }) {
+function Result({
+  state,
+  difficulty,
+  onReplay,
+  onChangeDifficulty,
+  character,
+}) {
   return (
     <>
       <div className="z-[99]">
-        {state === 5 && `You defeated ${difficulty.name}!`}
+        {state === 5 && `You defeated ${character.name}!`}
         {state === 6 && "You lost!"}
       </div>
       <div className="w-full flex justify-evenly z-[99]">

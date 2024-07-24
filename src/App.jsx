@@ -97,6 +97,7 @@ function App() {
                 onLose={() => {
                   setState(6);
                 }}
+                onBack={handleToDifficulty}
               />
             )}
           </div>

@@ -28,6 +28,7 @@ function Popup({ state, onReplay, onChangeDifficulty, help, onClose }) {
                 difficulty={difficulty}
                 onReplay={onReplay}
                 onChangeDifficulty={onChangeDifficulty}
+                character={character}
               />
             </div>
           )}

@@ -13,7 +13,7 @@ import { getCharacter } from "../modules/character";
 
 import Card from "./Card";
 
-function Game({ onWin, onLose }) {
+function Game({ onWin, onLose, onBack }) {
   const [score, setScore] = useState(0);
   const [pokemonList, setPokemonList] = useState(getPokemonList);
   const [isDisabled, setIsDisabled] = useState(0);
@@ -61,6 +61,12 @@ function Game({ onWin, onLose }) {
       </header>
       <main className="h-full w-full flex flex-col items-center">
         <div className="w-full text-center text-lg md:text-2xl relative">
+          <button
+            className="hover-scale absolute top-1/2 left-5 -translate-y-1/2"
+            onClick={onBack}
+          >
+            &lt; Back
+          </button>
           <div>- Difficulty -</div>
           <div>{difficulty.name}</div>
           <div>
