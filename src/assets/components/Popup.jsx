@@ -22,7 +22,7 @@ function Popup({ state, onReplay, onChangeDifficulty, help, onClose }) {
           )}
           {state > 4 && (
             <div className="h-full p-5 flex flex-col justify-evenly items-center relative overflow-hidden">
-              <Character character={character} />
+              <Character character={character} state={state} />
               <Result
                 state={state}
                 difficulty={difficulty}
