@@ -8,13 +8,11 @@ function Title({ isFirstTime }) {
         }
         id="title"
       >
-        <img
-          className="w-[75%] lg:w-full"
-          src="./src/assets/img/pokemon-logo.png"
-          alt="Pokémon"
-        />
-        <div id="logo-memory-card">
-          <big>Mémory Card</big>
+        <div className="px-2 py-7" id="logo-memory-card">
+          <div className="text-[calc(1rem+2vh+2vw)] flex flex-col items-center">
+            <big>PokéCard</big>
+            <small className="self-end">Memory</small>
+          </div>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@
   }
 
   .shadow-pokedarkblue {
-    text-shadow: -4px 4px 1px var(--pokedarkblue);
+    text-shadow: -0.5vh 0.5vh 1px var(--pokedarkblue);
   }
 
   .text-small {
@@ -40,6 +40,6 @@
 
   #logo-memory-card {
     @apply text-[#ffcb05] shadow-pokedarkblue;
-    -webkit-text-stroke: 3px #2a74ba;
+    -webkit-text-stroke: 0.4vh #2a74ba;
   }
 }

@@ -6,7 +6,10 @@ function Character({ character, state }) {
         (state > 4 ? "opacity-80" : "")
       }
     >
-      <img className="h-full self-end object-cover" src={character.sprite} />
+      <img
+        className="h-full self-end object-cover translate-x-[20%] xl:translate-x-0"
+        src={character.sprite}
+      />
     </div>
   );
 }
