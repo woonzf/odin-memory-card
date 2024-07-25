@@ -6,7 +6,7 @@
   /* Flip Card: https://www.w3schools.com/howto/howto_css_flip_card.asp */
   .card {
     /* Pokemon card size = 63.5 x 88 mm */
-    @apply h-[14vh] lg:h-[20vh] xl:h-[25vh] aspect-[0.722];
+    @apply h-[calc(1rem+8vh+8vw)] aspect-[0.722];
     perspective: 1000px;
   }
 
@@ -32,10 +32,6 @@
     @apply h-full w-full bg-pokeblue bg-opacity-75 border-[0.5vh] border-pokedarkblue rounded-md absolute;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-  }
-
-  .card-front {
-    @apply text-white;
   }
 
   .card-back {

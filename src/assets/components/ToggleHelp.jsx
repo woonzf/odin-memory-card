@@ -4,7 +4,7 @@ function ToggleHelp({ onClick }) {
       className="h-[50px] aspect-square overflow-hidden hover-scale"
       onClick={onClick}
     >
-      <div className="mt-[7px] text-white text-[50px] leading-none">?</div>
+      <div className="mt-[7px] text-[50px]">?</div>
     </button>
   );
 }

@@ -12,22 +12,30 @@
     @apply hover:scale-110 transition-transform duration-200;
   }
 
-  .btn-difficulty {
-    @apply text-2xl lg:text-4xl;
-  }
-
   .link-wrapper {
-    @apply w-[100px] lg:w-[150px] text-center;
+    @apply w-[calc((1rem+0.4vh+0.4vw)*5)] text-center text-small;
   }
 
   .shadow-pokedarkblue {
     text-shadow: -4px 4px 1px var(--pokedarkblue);
   }
+
+  .text-small {
+    @apply text-[calc(1rem+0.4vh+0.4vw)];
+  }
+
+  .text-normal {
+    @apply text-[calc(1rem+0.7vh+0.7vw)];
+  }
+
+  .text-large {
+    @apply text-[calc(1rem+1vh+1vw)];
+  }
 }
 
 @layer utilities {
   #root {
-    @apply h-full w-full flex flex-col items-center;
+    @apply h-full w-full text-white text-normal leading-none flex flex-col items-center;
   }
 
   #logo-memory-card {

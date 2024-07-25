@@ -7,10 +7,10 @@ function Result({
 }) {
   return (
     <>
-      <div className="z-[99]">
+      <big className="z-[99]">
         {state === 5 && `You defeated ${character.name}!`}
         {state === 6 && "You lost!"}
-      </div>
+      </big>
       <div className="w-full flex justify-evenly z-[99]">
         <button
           className="hover-scale shadow-pokedarkblue"
@@ -18,14 +18,14 @@ function Result({
             onReplay(difficulty.id);
           }}
         >
-          {state === 5 && <small>Replay</small>}
-          {state === 6 && <small>Retry</small>}
+          {state === 5 && "Replay"}
+          {state === 6 && "Retry"}
         </button>
         <button
           className="hover-scale shadow-pokedarkblue"
           onClick={onChangeDifficulty}
         >
-          <small>Change Difficulty</small>
+          Change Difficulty
         </button>
       </div>
     </>

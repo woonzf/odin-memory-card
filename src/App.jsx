@@ -39,11 +39,7 @@ function App() {
     setState(2);
   }
 
-  async function handleDifficultyClick(e) {
-    let id = null;
-    if (typeof e === "number") id = e;
-    else id = e.target.id;
-
+  async function handleDifficultyClick(id) {
     setState(3);
     await Promise.all([startGame(id), delay(5000)]);
     setState(4);
@@ -65,7 +61,7 @@ function App() {
               <ToggleHelp onClick={handleHelpChange} />
             </div>
             {state > 0 && state < 4 && (
-              <div className="h-full flex flex-col items-center text-white relative">
+              <div className="h-full flex flex-col items-center relative">
                 {intro === 0 && (
                   <ToggleSkipIntro
                     onClick={() => {

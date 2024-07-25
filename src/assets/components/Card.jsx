@@ -22,7 +22,9 @@ function Card({ pokemon, id, onClick, disabled }) {
               src={pokemon.sprite}
               onLoad={updateImgLoad}
             />
-            <div className="text-xs lg:text-xl capitalize">{pokemon.name}</div>
+            <div className="text-small capitalize">
+              <small>{pokemon.name}</small>
+            </div>
           </div>
           <div className="card-back flex justify-center items-center">
             <img className="w-[75%]" src={pokeball} />

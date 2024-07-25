@@ -54,49 +54,49 @@ function Game({ onWin, onLose, onBack }) {
   }
 
   return (
-    <div className="h-full flex flex-col text-white">
-      <header className="p-5 text-lg md:text-2xl flex justify-end">
-        <div className="text-end">
+    <div className="h-full flex flex-col">
+      <header className="p-5 flex justify-end">
+        <small className="text-end">
           <div>High Score: {highScore}</div>
           <div>Score: {score}</div>
-        </div>
+        </small>
       </header>
       <main className="h-full w-full flex flex-col items-center">
-        <div className="w-full text-center text-lg md:text-2xl relative">
+        <div className="w-full text-center relative">
           <button
             className="hover-scale absolute top-1/2 left-5 -translate-y-1/2"
             onClick={onBack}
           >
-            &lt; Back
+            <small>&lt; Back</small>
           </button>
-          <div>- Difficulty -</div>
-          <div>{difficulty.name}</div>
-          <div>
-            {score} / {difficulty.card}
-          </div>
+          <small>
+            <div>- Difficulty -</div>
+            <div>{difficulty.name}</div>
+            <div>
+              {score} / {difficulty.card}
+            </div>
+          </small>
           <div className="h-full w-1/2 flex justify-end absolute top-0 right-0 z-[-1]">
             <div className="h-full w-full flex flex-col justify-center relative">
               <img className="h-full object-cover" src={character.sprite} />
               <div className="absolute bottom-0 right-5 shadow-pokedarkblue">
-                {character.name}
+                <small>{character.name}</small>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex">
-          <div className="px-4 py-10 flex justify-center gap-5 flex-wrap">
-            {pokemonList.map((pokemon) => {
-              return (
-                <Card
-                  key={pokemon.id}
-                  pokemon={pokemon}
-                  id={pokemon.id}
-                  onClick={handleResult}
-                  disabled={isDisabled}
-                />
-              );
-            })}
-          </div>
+        <div className="px-4 py-6 flex justify-center gap-5 flex-wrap">
+          {pokemonList.map((pokemon) => {
+            return (
+              <Card
+                key={pokemon.id}
+                pokemon={pokemon}
+                id={pokemon.id}
+                onClick={handleResult}
+                disabled={isDisabled}
+              />
+            );
+          })}
         </div>
       </main>
     </div>

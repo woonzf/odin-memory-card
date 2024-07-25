@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="h-[30px] text-md lg:text-xl text-white flex justify-center items-center z-[99]">
+    <footer className="flex justify-center items-center z-[99]">
       <div className="link-wrapper">
         <a
           className="underline"
@@ -8,19 +8,21 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Repo
+          <small>Repo</small>
         </a>
       </div>
       <div className="link-wrapper">
-        <a
-          className="underline"
-          href="https://github.com/woonzf"
-          target="_blank"
-          rel="noreferrer"
-        >
-          WZF
-        </a>
-        &nbsp;&copy; 2024
+        <small>
+          &copy; 2024&nbsp;
+          <a
+            className="underline"
+            href="https://github.com/woonzf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            WZF
+          </a>
+        </small>
       </div>
       <div className="link-wrapper">
         <a
@@ -29,7 +31,7 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          PokéAPI
+          <small>PokéAPI</small>
         </a>
       </div>
     </footer>
