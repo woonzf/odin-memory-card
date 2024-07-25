@@ -12,17 +12,15 @@ function Footer() {
         </a>
       </div>
       <div className="link-wrapper">
-        <small>
-          &copy; 2024&nbsp;
-          <a
-            className="underline"
-            href="https://github.com/woonzf"
-            target="_blank"
-            rel="noreferrer"
-          >
-            WZF
-          </a>
-        </small>
+        <small>&copy; 2024&nbsp;</small>
+        <a
+          className="underline"
+          href="https://github.com/woonzf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <small>WZF</small>
+        </a>
       </div>
       <div className="link-wrapper">
         <a
