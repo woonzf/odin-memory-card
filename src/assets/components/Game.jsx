@@ -76,16 +76,7 @@ function Game({ onWin, onLose, onBack }) {
           </div>
           <div className="h-full w-1/2 flex justify-end absolute top-0 right-0 z-[-1]">
             <div className="h-full w-full flex flex-col justify-center relative">
-              {difficulty.id !== 0 ? (
-                <img className="h-full object-cover" src={character.sprite} />
-              ) : (
-                <div className="h-full pr-5 flex justify-end overflow-hidden">
-                  <img
-                    className="h-[150%] object-cover md:-translate-x-[30%]"
-                    src={character.sprite}
-                  />
-                </div>
-              )}
+              <img className="h-full object-cover" src={character.sprite} />
               <div className="absolute bottom-0 right-5 shadow-pokedarkblue">
                 {character.name}
               </div>

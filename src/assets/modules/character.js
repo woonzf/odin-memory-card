@@ -1,10 +1,10 @@
 import { getRandomInt } from "./helper";
 
 // Wild Pokemon
-import bulbasaur from "../img/wild_pokemon/bulbasaur-256w.png";
-import charmander from "../img/wild_pokemon/charmander-256w.png";
-import squirtle from "../img/wild_pokemon/squirtle-256w.png";
-import pikachu from "../img/wild_pokemon/pikachu-256w.png";
+import bulbasaur from "../img/wild_pokemon/bulbasaur.png";
+import charmander from "../img/wild_pokemon/charmander.png";
+import squirtle from "../img/wild_pokemon/squirtle.png";
+import pikachu from "../img/wild_pokemon/pikachu.png";
 
 // Trainer
 import beauty from "../img/trainer/VSBeauty.png";
