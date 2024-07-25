@@ -9,7 +9,7 @@ function ToggleSkipIntro({ onClick }) {
         onClick();
       }}
     >
-      <small>Skip</small>
+      Skip
     </button>
   );
 }

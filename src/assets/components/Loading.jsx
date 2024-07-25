@@ -1,7 +1,7 @@
 function Loading({ difficulty, character }) {
   return (
     <>
-      <div className="h-full flex flex-col justify-between animate-slide-right z-[99]">
+      <div className="h-full pb-5 flex flex-col justify-between animate-slide-right z-[99]">
         <div>
           <big>Difficulty: {difficulty.name}</big>
           <div>Cards: {difficulty.card}</div>
