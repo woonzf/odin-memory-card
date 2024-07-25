@@ -3,17 +3,24 @@ function Title({ isFirstTime }) {
     <div className="h-fit overflow-hidden">
       <div
         className={
-          "flex flex-col justify-center items-center gap-[1vh] select-none " +
+          "flex flex-col " +
           (isFirstTime ? "animate-logo translate-y-full" : "")
         }
         id="title"
       >
-        <div className="px-2 py-7" id="logo-memory-card">
-          <div className="text-[calc(1rem+2vh+2vw)] flex flex-col items-center">
-            <big>PokéCard</big>
-            <small className="self-end">Memory</small>
+        <div className="px-3 py-5">
+          <div
+            className="text-[calc(1rem+2vh+2vw)] flex items-center"
+            id="logo-memory-card"
+          >
+            <big>Poké&nbsp;</big>
+            <small>
+              <div>Memory</div>
+              <div>Card</div>
+            </small>
           </div>
         </div>
+        <small className="text-end">a TOP project</small>
       </div>
     </div>
   );

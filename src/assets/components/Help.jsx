@@ -5,10 +5,12 @@ function Help({ onClick }) {
         className="absolute top-5 right-5 hover-scale shadow-pokedarkblue"
         onClick={onClick}
       >
-        X
+        <big>X</big>
       </button>
-      <big>How to play?</big>
-      <small className="text-center">Don't pick the same card twice!</small>
+      <div className="text-large">
+        <big>How to play?</big>
+      </div>
+      <div className="text-center">Don&apos;t pick the same card twice!</div>
     </div>
   );
 }

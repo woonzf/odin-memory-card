@@ -40,6 +40,6 @@
 
   #logo-memory-card {
     @apply text-[#ffcb05] shadow-pokedarkblue;
-    -webkit-text-stroke: 0.4vh #2a74ba;
+    -webkit-text-stroke: 0.1vh var(--pokedarkblue);
   }
 }

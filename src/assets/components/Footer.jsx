@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="flex justify-center items-center z-[99]">
+    <footer className="py-1 flex justify-center items-center z-[99]">
       <div className="link-wrapper">
         <a
           className="underline"
