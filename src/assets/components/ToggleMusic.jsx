@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { getIsPlaying, playBGM } from "../modules/music";
 
+import musicOn from "../icons/music.png";
+import musicOff from "../icons/music-off.png";
+
 function ToggleMusic() {
   const [playMusic, setPlayMusic] = useState(getIsPlaying);
 
@@ -13,9 +16,9 @@ function ToggleMusic() {
     <button onClick={handlePlayMusicChange}>
       <div className="hover-scale">
         {playMusic === 1 ? (
-          <img src="./src/assets/icons/music.png" alt="Music: On" />
+          <img src={musicOn} alt="Music: On" />
         ) : (
-          <img src="./src/assets/icons/music-off.png" alt="Music: Off" />
+          <img src={musicOff} alt="Music: Off" />
         )}
       </div>
     </button>
