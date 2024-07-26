@@ -26,7 +26,9 @@ function Card({ pokemon, id, onClick, disabled, windowWidth }) {
             <div className="w-full px-1 text-small md:text-normal">
               <SmartTicker speed={windowWidth < 768 ? 10 : 20}>
                 <small className="pt-1 flex">
-                  &nbsp;&nbsp;{pokemon.name}&nbsp;&nbsp;
+                  <span>&nbsp;&nbsp;</span>
+                  <div className="capitalize">{pokemon.name}</div>
+                  <span>&nbsp;&nbsp;</span>
                 </small>
               </SmartTicker>
             </div>
