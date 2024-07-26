@@ -7,6 +7,7 @@ Pokeball: https://commons.wikimedia.org/wiki/File:Pok%C3%A9_Ball_icon.svg
 
 API: https://pokeapi.co/
 Howler: https://howlerjs.com/
+React Smart Ticker: https://www.npmjs.com/package/react-smart-ticker
 
 Features:
 - background music
@@ -15,6 +16,3 @@ Features:
 - loading screen
 - score / high score
 - pokemon cry when click
-
-Todo:
-- toggle battle/relax bgm

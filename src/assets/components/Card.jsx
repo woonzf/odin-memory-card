@@ -1,4 +1,5 @@
 import { Howl } from "howler";
+import { SmartTicker } from "react-smart-ticker";
 import { updateImgLoad } from "../modules/flip";
 import pokeball from "../img/pokeball.png";
 import "../styles/Card.css";
@@ -22,8 +23,12 @@ function Card({ pokemon, id, onClick, disabled }) {
               src={pokemon.sprite}
               onLoad={updateImgLoad}
             />
-            <div className="text-small capitalize">
-              <small>{pokemon.name}</small>
+            <div className="w-full px-1 text-small md:text-normal">
+              <SmartTicker speed={10}>
+                <small className="pt-1 flex">
+                  &nbsp;&nbsp;{pokemon.name}&nbsp;&nbsp;
+                </small>
+              </SmartTicker>
             </div>
           </div>
           <div className="card-back flex justify-center items-center">
