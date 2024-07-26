@@ -1,6 +1,6 @@
 # Poké Memory Card
 
-### [Demo](#)
+### [Demo](https://woonzf.github.io/odin-memory-card/)
 
 ### Disclaimer:
 
@@ -15,7 +15,7 @@ A project for The Odin Project: React Course's [Project: Memory Card](https://ww
 
 A memory card game inspired by Pokémon, featuring Generation 1 characters and Pokémon (sprites and cries from [PokéAPI](https://pokeapi.co/)).
 
-Made with React + Vite
+Made with React + Vite (and also nostalgia, Pokémon Red is my first Pokémon game on an Atomic Purple Game Boy Color...)
 
 ### Game Features:
 
