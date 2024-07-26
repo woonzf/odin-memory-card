@@ -3,7 +3,7 @@ function Landing({ onClick }) {
     <button className="h-full w-full flex justify-center" onClick={onClick}>
       <div className="h-full w-full max-w-screen-xl flex flex-col">
         <div className="h-[43%] flex justify-center items-end">
-          <div className="h-[50%] px-4 flex flex-col justify-center gap-[5vh]">
+          <div className="h-[50%] px-4 flex flex-col justify-end gap-[5vh]">
             <big>A memory card game inspired by Pokémon...</big>
             <small>
               This game is not associated with The Pokémon Company in any way.
