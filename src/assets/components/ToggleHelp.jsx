@@ -1,10 +1,9 @@
+import help from "../icons/help.png";
+
 function ToggleHelp({ onClick }) {
   return (
-    <button
-      className="h-[50px] aspect-square overflow-hidden hover-scale"
-      onClick={onClick}
-    >
-      <div className="text-[50px]">?</div>
+    <button className="hover-scale" onClick={onClick}>
+      <img src={help} alt="Help" />
     </button>
   );
 }
