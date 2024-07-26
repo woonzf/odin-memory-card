@@ -94,6 +94,7 @@ function Game({ onWin, onLose, onBack }) {
                 id={pokemon.id}
                 onClick={handleResult}
                 disabled={isDisabled}
+                windowWidth={window.innerWidth}
               />
             );
           })}

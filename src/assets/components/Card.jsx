@@ -4,7 +4,7 @@ import { updateImgLoad } from "../modules/flip";
 import pokeball from "../img/pokeball.png";
 import "../styles/Card.css";
 
-function Card({ pokemon, id, onClick, disabled }) {
+function Card({ pokemon, id, onClick, disabled, windowWidth }) {
   const cry = new Howl({
     src: [pokemon.cry],
   });
@@ -24,7 +24,7 @@ function Card({ pokemon, id, onClick, disabled }) {
               onLoad={updateImgLoad}
             />
             <div className="w-full px-1 text-small md:text-normal">
-              <SmartTicker speed={10}>
+              <SmartTicker speed={windowWidth < 768 ? 10 : 20}>
                 <small className="pt-1 flex">
                   &nbsp;&nbsp;{pokemon.name}&nbsp;&nbsp;
                 </small>
