@@ -1,18 +1,28 @@
 import { getRandomInt } from "./helper";
 
 // Gen 1 pokemon only
-let pokedexCount = 152;
+const pokedexCount = 152;
+const map = new Map();
 
 export async function generatePokemonList(card) {
   const url = "https://pokeapi.co/api/v2/pokemon/";
   const indexList = generateIndexList(card);
   const list = await Promise.all(
-    indexList.map((index) => getPokemon(url, index)),
+    indexList.map((index) => {
+      const string = index.toString();
+      let pokemon = null;
+      if (map.has(string)) pokemon = map.get(string);
+      else {
+        pokemon = fetchPokemon(url, index);
+        map.set(string, pokemon);
+      }
+      return pokemon;
+    }),
   );
   return list;
 }
 
-async function getPokemon(url, index) {
+async function fetchPokemon(url, index) {
   const response = await fetch(url + index);
   const json = await response.json();
   return {
