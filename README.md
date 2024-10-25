@@ -15,7 +15,7 @@ A project for The Odin Project: React Course's [Project: Memory Card](https://ww
 
 A memory card game inspired by Pokémon, featuring Generation 1 characters and Pokémon (sprites and cries from [PokéAPI](https://pokeapi.co/)).
 
-Made with React + Vite (and also nostalgia, Pokémon Red is my first Pokémon game on an Atomic Purple Game Boy Color...)
+Made with React + Vite.
 
 ### Game Features:
 
@@ -38,28 +38,9 @@ Made with React + Vite (and also nostalgia, Pokémon Red is my first Pokémon ga
 <img style="border-radius:5px" src="./public/poke-memory-card.png" height="300" width="auto">
 <img style="border-radius:5px" src="./public/poke-memory-card-2.png" height="300" width="auto">
 
-### Language:
+### Tech stack:
 
-- HTML
-- CSS
-- JavaScript
-
-### Library:
-
-- React
-- [howler.js](https://howlerjs.com/)
-
-### Framework:
-
-- Tailwind CSS
-
-### NPM package:
-
-- [React Smart Ticker](https://www.npmjs.com/package/react-smart-ticker)
-
-### Formatter:
-
-- Prettier
+HTML, CSS, JavaScript, React, [howler.js](https://howlerjs.com/), Tailwind CSS, [React Smart Ticker](https://www.npmjs.com/package/react-smart-ticker), Prettier
 
 ### Resources:
 
